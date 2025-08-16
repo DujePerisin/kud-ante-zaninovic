@@ -19,12 +19,12 @@ type RevealTextProps = {
 };
 
 export const RevealText = ({
-    field, 
-    id, 
-    align = "start", 
-    as: Component = "div", 
-    duration = .8, 
-    className, 
+    field,
+    id,
+    align = "start",
+    as: Component = "div",
+    duration = .8,
+    className,
     staggerAmount = .1,
 }: RevealTextProps) => {
     const componentRef = useRef<HTMLDivElement>(null);
@@ -33,15 +33,30 @@ export const RevealText = ({
 
     useGSAP(
         () => {
+            const mm = gsap.matchMedia()
 
-        gsap.to(".reveal-text-word", {
-            y: 0,
-            stagger: staggerAmount,
-            duration,
-            ease: "power3.out",
-        });
-
-    }, {scope: componentRef})
+            mm.add("(prefers-reduced-motion: no-preference)",
+                () => {
+                    //zoom out animacija
+                    gsap.to(".reveal-text-word", {
+                        y: 0,
+                        stagger: staggerAmount,
+                        duration,
+                        ease: "power3.out",
+                    });
+                });
+            mm.add("(prefers-reduced-motion: reduce)",
+                () => {
+                    //zoom out animacija
+                    gsap.to(".reveal-text-word", {
+                        duration: .5,
+                        opacity: 1,
+                        ease: "none",
+                        y: 0,
+                        stagger: 0,
+                    });
+                });
+        }, { scope: componentRef })
 
     return (
         <Component
@@ -52,7 +67,7 @@ export const RevealText = ({
                 align === "center" && "text-left",
                 className,
             )}
-            ref={componentRef}        
+            ref={componentRef}
         >
             {words.map((word, index) => (
                 //pobrine se da je kljuc unikantan

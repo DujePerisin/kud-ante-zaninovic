@@ -25,8 +25,8 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="relative min-h-screen overflow-hidden bg-neutral-950"
     >
-      <FadeIn vars={{scale: 1, opacity: .5}} className="absolute inset-0 scale-125 opacity-0">
-        <PrismicNextImage field={slice.primary.image} alt="" priority fill className="object-cover opacity-50" />
+      <FadeIn vars={{scale: 1, opacity: .5}} className="absolute inset-0 motion-safe:scale-125 opacity-0">
+        <PrismicNextImage field={slice.primary.image} alt="" priority fill className="object-cover motion-reduce:opacity-50" />
       </FadeIn>
 
       <div className="flex relative h-screen flex-col justify-center">
