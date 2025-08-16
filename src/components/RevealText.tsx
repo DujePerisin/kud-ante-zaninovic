@@ -56,8 +56,8 @@ export const RevealText = ({
         >
             {words.map((word, index) => (
                 //pobrine se da je kljuc unikantan
-                <span key={`${word}-${index}-${id}`} className="mb-0 inline-block overflow-hidden">
-                    <span className=" reveal-text-word mt-0 inline-block translate-y-full will-change-transform ">
+                <span key={`${word}-${index}-${id}`} className="mb-0 inline-block overflow-hidden pb-4">
+                    <span className=" reveal-text-word mt-0 inline-block translate-y-[120%] will-change-transform ">
                         {word}
                     </span>
                 </span>
