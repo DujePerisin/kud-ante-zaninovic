@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { asText, Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import { Bounded } from "@/components/Bounded";
 
 
@@ -8,6 +8,12 @@ export type ScrollTextProps = SliceComponentProps<Content.ScrollTextSlice>;
 
 
 const ScrollText: FC<ScrollTextProps> = ({ slice }) => {
+  /*const componentRef = useRef<HTMLDivElement>(null)
+  const textRef = useRef<HTMLDivElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)*/
+  { /* import useRef if going this route duje */}
+  {/* animating this slice via GSAP in the future if time allows it, "skužajte ljudi ako nisan...radin 3 posla uz faks" */}
+
 
   const words = asText(slice.primary.text).split(" ");
 
