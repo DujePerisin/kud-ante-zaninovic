@@ -1,0 +1,62 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Spent"
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Fugiat ut fugiat ea nulla ad pariatur consectetur voluptate ex aute elit occaecat excepteur Lorem. Ullamco consectetur nisi deserunt consequat culpa dolor non incididunt ex ex exercitation deserunt ullamco. Cupidatat fugiat dolor exercitation magna aute culpa dolor esse aute pariatur id ullamco incididunt cupidatat."
+						}
+					}
+				]
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
+					"width": 12288,
+					"height": 16384
+				},
+				"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
+				"width": 12288,
+				"height": 16384,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "strength",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"fragrance": {
+				"__TYPE__": "LinkContent",
+				"key": "2a6e492d-309c-4d89-b254-0ffbcc227e48",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
+			}
+		},
+		"items": []
+	}
+]
