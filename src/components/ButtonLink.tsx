@@ -69,3 +69,22 @@ export const ButtonLink = React.forwardRef<HTMLAnchorElement, ButtonLinkProps>(
   }
 );
 ButtonLink.displayName = "ButtonLink";
+
+
+// Quick sanity checks
+
+// Wherever you use <ButtonLink />, make sure you pass exactly one of:
+
+// href="/somewhere"
+
+// field={slice.primary.link}
+
+// document={doc}
+
+// If you still see a mismatch, ensure versions line up:
+
+// next (which introduced 'auto' for prefetch)
+
+// @prismicio/next (needs to match your Next version’s Link typings)
+
+// As a last-resort workaround, you could cast restProps as PrismicNextLinkProps—but the union-preserving approach above is the clean, type-safe fix.

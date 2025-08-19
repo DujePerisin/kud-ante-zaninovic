@@ -10,6 +10,7 @@ import { useGSAP } from "@gsap/react";
 import { Bounded } from "@/components/Bounded";
 import { FadeIn } from "@/components/FadeIn";
 import { RevealText } from "@/components/RevealText";
+import { ButtonLink } from "@/components/ButtonLink";
 
 gsap.registerPlugin(useGSAP)
 
@@ -17,7 +18,7 @@ gsap.registerPlugin(useGSAP)
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 const Hero: FC<HeroProps> = ({ slice }) => {
-  
+
 
   return (
     <Bounded
@@ -25,7 +26,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="relative min-h-screen overflow-hidden bg-neutral-950"
     >
-      <FadeIn vars={{scale: 1, opacity: .5}} className="absolute inset-0 motion-safe:scale-125 opacity-0">
+      <FadeIn vars={{ scale: 1, opacity: .5 }} className="absolute inset-0 motion-safe:scale-125 opacity-0">
         <PrismicNextImage field={slice.primary.image} alt="" priority fill className="object-cover motion-reduce:opacity-50" />
       </FadeIn>
 
@@ -40,26 +41,33 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 
 
         <FadeIn className="mt-6 max-w-md text-lg text-neutral-100 translate-y-8"
-        vars={{delay: 1, duration: 1.3}}
+          vars={{ delay: 1, duration: 1.3 }}
         >
-        <PrismicRichText field={slice.primary.body} />
+          <PrismicRichText field={slice.primary.body} />
         </FadeIn>
-        
+
 
         <FadeIn className="mt-8 translate-y-5"
-        vars={{delay: 1.7, duration: 1.1}}
+          vars={{ delay: 1.7, duration: 1.1 }}
         >
-        {slice.primary.button.map((link) => (
-          <PrismicNextLink
-          key={link.key}
-          field={link}
-          className={clsx(
-            "inline-flex items-center justify-center px-12 py-4 text-center font-extrabold tracking-wider uppercase transition-colors duration-300",
-            link.variant === "Secondary" ? "border border-white text-white hover:bg-white/20" : "bg-white text-black hover:bg-white/80",
-            "w-fit"
-          )}
-          />
-        ))}
+          {slice.primary.button.map((link) => (
+            <ButtonLink
+              key={link.key}
+              field={link}
+              className="w-fit"
+              variant="Secondary"
+            />
+
+            // <PrismicNextLink
+            // key={link.key}
+            // field={link}
+            // className={clsx(
+            //   "inline-flex items-center justify-center px-12 py-4 text-center font-extrabold tracking-wider uppercase transition-colors duration-300",
+            //   link.variant === "Secondary" ? "border border-white text-white hover:bg-white/20" : "bg-white text-black hover:bg-white/80",
+            //   "w-fit"
+            // )}
+            // />
+          ))}
         </FadeIn>
       </div>
     </Bounded>

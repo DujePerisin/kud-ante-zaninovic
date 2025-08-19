@@ -5,6 +5,7 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { Bounded } from "@/components/Bounded";
 import { FadeIn } from "@/components/FadeIn";
 import { createClient } from "@/prismicio"
+import { ButtonLink } from "@/components/ButtonLink";
 
 
 export type ProductFeatureProps =
@@ -60,7 +61,14 @@ const ProductFeature: FC<ProductFeatureProps> = async ({ slice }) => {
                 <PrismicText field={fragrance?.data.title} fallback="Fragrance" />
               </h3>
               <p className="mt-2 text-gray-400">Eau de Parfum</p>
-              <p>Button Link</p>
+              {/* "document" će ih preusmjerit zapravo na prismicio.ts file linije 21-25 */}
+              <ButtonLink
+                document={fragrance}
+                variant="Secondary"
+                className="mt-6"
+              >
+                Shop Now
+              </ButtonLink>
             </div>
           </div>
         </FadeIn>
