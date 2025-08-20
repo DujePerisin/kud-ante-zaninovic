@@ -63,8 +63,8 @@ export const RevealText = ({
             className={clsx(
                 "reveal-text text-balance",
                 align === "center" && "text-center",
-                align === "center" && "text-right",
-                align === "center" && "text-left",
+                align === "end" && "text-right",
+                align === "start" && "text-left",
                 className,
             )}
             ref={componentRef}

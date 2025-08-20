@@ -32,7 +32,9 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 
       <div className="flex relative h-screen flex-col justify-center">
 
-
+        <FadeIn vars={{ delay: 0.8, duration: 0.8 }}>
+          <p className="text-sm font-semibold tracking-[0.5em] uppercase">kud</p>
+        </FadeIn>
         <RevealText field={slice.primary.heading} id="hero-heading" className="max-w-xl text-6xl leading-none text-neutral-50 md:text-7xl lg:text-8xl font-display"
           staggerAmount={.2}
           duration={1.7}
