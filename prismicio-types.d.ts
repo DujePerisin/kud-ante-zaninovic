@@ -155,6 +155,17 @@ interface FragranceDocumentData {
   mood: prismic.SelectField<"bold" | "grounded" | "refreashing", "filled">;
 
   /**
+   * Feature Image field in *Fragrance*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: fragrance.feature_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  feature_image: prismic.ImageField<never>;
+
+  /**
    * Slice Zone field in *Fragrance*
    *
    * - **Field Type**: Slice Zone

@@ -41,7 +41,10 @@ const FragranceList: FC<FragranceListProps> = ({ slice }) => {
 
               return (
                 /* Display komponenta ce ic ode */
-                <FragranceDisplay key={item.fragrance.id} />
+                <FragranceDisplay
+                  key={item.fragrance.id}
+                  id={item.fragrance.id}
+                />
 
               )
             }
