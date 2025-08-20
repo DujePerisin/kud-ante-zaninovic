@@ -48,7 +48,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 
 
         <FadeIn className="mt-8 translate-y-5"
-          vars={{ delay: 1.7, duration: 1.1 }}
+          vars={{ delay: 1, duration: 1.1 }}
         >
           {slice.primary.button.map((link) => (
             <ButtonLink
