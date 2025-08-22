@@ -5,8 +5,9 @@ import { asText, RichTextField } from "@prismicio/client"
 import clsx from "clsx";
 import { useRef } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(useGSAP)
+gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 type RevealTextProps = {
     field: RichTextField;
@@ -16,6 +17,8 @@ type RevealTextProps = {
     as?: React.ElementType;
     duration?: number;
     align?: "center" | "start" | "end";
+    triggerStart?: string;
+    triggerEnd?: string;
 };
 
 export const RevealText = ({
@@ -26,6 +29,8 @@ export const RevealText = ({
     duration = .8,
     className,
     staggerAmount = .1,
+    triggerStart = "top 80%",
+    triggerEnd = "bottom 20%",
 }: RevealTextProps) => {
     const componentRef = useRef<HTMLDivElement>(null);
     //iz rich text u obicni text i podijeli ga pri svakom razmaku
@@ -43,6 +48,11 @@ export const RevealText = ({
                         stagger: staggerAmount,
                         duration,
                         ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: componentRef.current,
+                            start: triggerStart,
+                            end: triggerEnd,
+                        }
                     });
                 });
             mm.add("(prefers-reduced-motion: reduce)",

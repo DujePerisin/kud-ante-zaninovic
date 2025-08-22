@@ -35,7 +35,7 @@ const CallToAction: FC<CallToActionProps> = ({ slice }) => {
 
         <FadeIn
           className="mx-auto max-w-2xl translate-y-2 text-lg text-balance text-gray-300"
-          vars={{ duration: 0.5 }}
+          vars={{ duration: 0.8, delay: 0.3 }}
         >
           <PrismicRichText field={slice.primary.body} />
         </FadeIn>

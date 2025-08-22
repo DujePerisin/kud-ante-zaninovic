@@ -10,7 +10,7 @@ export const NavBar = () => {
                     <button className="p-2">Menu</button>
 
                     <div className="absolute left-1/2 -translate-x-1/2 transform">
-                        <Image src="/logo.svg" alt="Cote Royale Paris" width={180} height={30} className="w-32 m:w-44"/>
+                        <Image src="/logo.svg" alt="Cote Royale Paris" width={180} height={29} className="w-32 m:w-44"/>
                     </div>
 
                     <div className="flex">Icons</div>
