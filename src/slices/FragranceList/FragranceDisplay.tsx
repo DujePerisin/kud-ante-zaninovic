@@ -9,6 +9,7 @@ import { IoPeopleSharp } from "react-icons/io5";
 
 type FragranceDisplayProps = {
     id: string;
+
 }
 
 export const FragranceDisplay = async ({id}:FragranceDisplayProps) => {
@@ -17,7 +18,11 @@ export const FragranceDisplay = async ({id}:FragranceDisplayProps) => {
     const fragrance = await client.getByID<Content.FragranceDocument>(id)
 
     return (
-        <FadeIn className="relative z-10 grid min-h-[85vh] w-full translate-y-20 items-center justify-items-start border border-white/10 p-4 text-left md:p-14 lg:p-20">
+        <FadeIn 
+        className="relative z-10 grid min-h-[85vh] w-full translate-y-20 items-center justify-items-start border border-white/10 p-4 text-left md:p-14 lg:p-20"
+        vars={{duration: 1.5}}
+        start="top 75%"
+        >
             <div className="absolute inset-0 z-0 ">
                 <PrismicNextImage 
                 field={fragrance.data.feature} 
@@ -39,6 +44,8 @@ export const FragranceDisplay = async ({id}:FragranceDisplayProps) => {
                 <div className="mb-10 max-w-md text-lg text-gray-300">
                     <PrismicRichText field={fragrance.data.description} />
                 </div>
+
+                {/* potencijalno ode dodat jos neki element, al mislin da nece bit potrebno F-Atributi */}
 
                 <div className="flex flex-wrap gap-4">
                     {/* samo ce mi jedan buton tribat za linkat na neku drugu stranicu...otom kasniej vise */}
