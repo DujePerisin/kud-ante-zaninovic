@@ -77,9 +77,11 @@ export async function generateMetadata({
   const { uid } = await params;
   const client = createClient();
   const page = await client.getByUID("fragrance", uid).catch(() => notFound());
+  const settings = await client.getSingle("settings");
+
 
   return {
-    title: asText(page.data.title) + " | KUD Ante Zaninović",
+    title: asText(page.data.title) + " | " + settings.data.site_title,
     description: `${asText(page.data.title)}, folk dance group`,
     openGraph: {
       images: [{ url: asImageSrc(page.data.meta_image) ?? "" }],
