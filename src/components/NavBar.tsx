@@ -67,7 +67,7 @@ export const NavBar = ({settings}: NavBarProps) => {
                     </div>
 
                     <div className="flex">
-                        <NavIcons />
+                        <NavIcons className="hidden md:flex"/>
                     </div>
                 </div>
             </div>
