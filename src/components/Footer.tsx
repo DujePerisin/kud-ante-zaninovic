@@ -33,14 +33,14 @@ export const Footer = () => {
         {/* Bottom footer */}
         <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-neutral-800 pt-8 md:flex-row">
           <p className="text-center text-sm text-gray-400">
-            © {new Date().getFullYear()} Côte Royale Inc. All rights reserved
+            © {new Date().getFullYear()} KUD Ante Zaninović
           </p>
           <Link
             href="/"
-            aria-label="Côte Royale Home"
+            aria-label="KUD Ante Zaninović Home"
             className="order-first md:order-none"
           >
-            <Image src="/logo.svg" alt="CÔTE ROYALE" width={150} height={25} />
+            <Image src="/icon.png" alt="KUD Ante Zaninovic" width={150} height={25} />
           </Link>
           <ul
             aria-label="Legal"
@@ -48,12 +48,12 @@ export const Footer = () => {
           >
             <li>
               <Link href="#" className="hover:text-white">
-                Terms &amp; conditions
+                Uvjeti &amp; odredbe
               </Link>
             </li>
             <li>
               <Link href="#" className="hover:text-white">
-                Privacy Policy
+                Pravila privatnosti
               </Link>
             </li>
           </ul>

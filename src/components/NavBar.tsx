@@ -59,7 +59,7 @@ export const NavBar = ({ settings }: NavBarProps) => {
                     <div className="absolute left-1/2 -translate-x-1/2 transform">
                         <Link href="/">
                             <Image
-                                src="/logo.svg"
+                                src="/logo.png"
                                 alt="KUD Ante Zaninović"
                                 width={180}
                                 height={29}
