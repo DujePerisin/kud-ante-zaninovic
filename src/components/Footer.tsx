@@ -10,24 +10,43 @@ export const Footer = () => {
         Footer
       </h2>
       <div className="container mx-auto px-6">
-        <div className="grid gap-10 md:grid-cols-3">
-          <NavGroup title="Shop">
-            <NavLink href="/fragrance/terra">Terra</NavLink>
-            <NavLink href="/fragrance/igni">Igni</NavLink>
-            <NavLink href="/fragrance/aqua">Aqua</NavLink>
+        <div className="grid gap-10 md:grid-cols-3 max-w-6xl mx-auto">
+          <NavGroup title="O Nama">
+            <NavLink href="#" target="_blank" rel="noopener noreferrer">
+              Novosti
+            </NavLink>
+            <NavLink href="https://www.google.com/maps/place/Beach+Stara+%C5%A1kola/@43.5482484,16.3871351,20.73z/data=!4m6!3m5!1s0x13355d3f07746de1:0x748f1676a49e932c!8m2!3d43.5482254!4d16.3873749!16s%2Fg%2F11k69kbmjn?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+              Lokacija
+            </NavLink>
+            <NavLink href="/terms/" target="_blank" rel="noopener noreferrer">
+              Pravila Privatnosti
+            </NavLink>
           </NavGroup>
 
-          <NavGroup title="About">
-            <NavLink href="#">Science</NavLink>
-            <NavLink href="#">Our Story</NavLink>
-            <NavLink href="#">Côte Royale</NavLink>
+          <NavGroup title="Mreže">
+            <NavLink href="https://www.instagram.com/kudantezaninovic/" target="_blank" rel="noopener noreferrer">
+              Instagram
+            </NavLink>
+            <NavLink href="https://www.facebook.com/p/KUD-Ante-Zaninovic-100063625745937/?locale=hr_HR" target="_blank" rel="noopener noreferrer">
+              Facebook
+            </NavLink>
+            <NavLink href="https://www.hrvatskifolklor.net/php/kudovi/kudantezaninovic.php" target="_blank" rel="noopener noreferrer">
+              HR Folk Net
+            </NavLink>
           </NavGroup>
 
-          <NavGroup title="Social">
-            <NavLink href="#">Instagram</NavLink>
-            <NavLink href="#">X (Twitter)</NavLink>
-            <NavLink href="#">Facebook</NavLink>
+          <NavGroup title="O Nama">
+            <NavLink href="#" target="_blank" rel="noopener noreferrer">
+              Novosti
+            </NavLink>
+            <NavLink href="https://www.google.com/maps/place/Beach+Stara+%C5%A1kola/@43.5482484,16.3871351,20.73z/data=!4m6!3m5!1s0x13355d3f07746de1:0x748f1676a49e932c!8m2!3d43.5482254!4d16.3873749!16s%2Fg%2F11k69kbmjn?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+              Lokacija
+            </NavLink>
+            <NavLink href="/terms/" target="_blank" rel="noopener noreferrer">
+              Pravila Privatnosti
+            </NavLink>
           </NavGroup>
+
         </div>
 
         {/* Bottom footer */}
@@ -47,12 +66,12 @@ export const Footer = () => {
             className="flex flex-wrap justify-center gap-6 text-sm text-gray-400"
           >
             <li>
-              <Link href="#" className="hover:text-white">
+              <Link href="/terms/" className="hover:text-white">
                 Uvjeti &amp; odredbe
               </Link>
             </li>
             <li>
-              <Link href="#" className="hover:text-white">
+              <Link href="/terms/" className="hover:text-white">
                 Pravila privatnosti
               </Link>
             </li>
@@ -85,12 +104,14 @@ const NavGroup = ({ title, children }: NavGroupProps) => (
 type NavLinkProps = {
   href: string;
   children: ReactNode;
+  target?: string;
+  rel?: string;
 };
 
-const NavLink = ({ href, children }: NavLinkProps) => {
+const NavLink = ({ href, children, target, rel }: NavLinkProps) => {
   return (
     <li>
-      <Link href={href} className="hover:text-gray-300">
+      <Link href={href} className="hover:text-gray-300" target={target} rel={rel}>
         {children}
       </Link>
     </li>
