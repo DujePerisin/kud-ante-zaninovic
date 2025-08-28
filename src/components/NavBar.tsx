@@ -38,7 +38,7 @@ type NavBarProps = {
 }
 
 
-export const NavBar = ({settings}: NavBarProps) => {
+export const NavBar = ({ settings }: NavBarProps) => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
     const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen);
@@ -57,17 +57,19 @@ export const NavBar = ({settings}: NavBarProps) => {
                     </button>
 
                     <div className="absolute left-1/2 -translate-x-1/2 transform">
-                        <Image
-                            src="/logo.svg"
-                            alt="KUD Ante Zaninović"
-                            width={180}
-                            height={29}
-                            className="w-32 m:w-44"
-                        />
+                        <Link href="/">
+                            <Image
+                                src="/logo.svg"
+                                alt="KUD Ante Zaninović"
+                                width={180}
+                                height={29}
+                                className="w-32 md:w-44"
+                            />
+                        </Link>
                     </div>
 
                     <div className="flex">
-                        <NavIcons className="hidden md:flex"/>
+                        <NavIcons className="hidden md:flex" />
                     </div>
                 </div>
             </div>
