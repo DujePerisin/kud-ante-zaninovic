@@ -3,12 +3,13 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { FadeIn } from "@/components/FadeIn";
 import { RevealText } from "@/components/RevealText";
 import { Bounded } from "@/components/Bounded";
+import { Content } from "@prismicio/client";
 
 function isEmail(str: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str);
 }
 
-export default function StoryAndStyles({ slice }: SliceComponentProps<any>) {
+export default function StoryAndStyles({ slice }: SliceComponentProps<Content.StoryAndStylesSlice>) {
   const p = slice.primary;
 
   return (
