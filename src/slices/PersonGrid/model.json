@@ -1,0 +1,72 @@
+{
+  "id": "person_grid",
+  "type": "SharedSlice",
+  "name": "PersonGrid",
+  "description": "PersonGrid",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "name": {
+          "type": "Text",
+          "config": {
+            "label": "Name",
+            "placeholder": ""
+          }
+        },
+        "role": {
+          "type": "Text",
+          "config": {
+            "label": "Role",
+            "placeholder": ""
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "bio": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Bio",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,em,strong"
+          }
+        },
+        "socialmedia1": {
+          "type": "Link",
+          "config": {
+            "label": "SocialMedia1",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": true
+          }
+        },
+        "socialmedia2": {
+          "type": "Link",
+          "config": {
+            "label": "SocialMedia2",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": true
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

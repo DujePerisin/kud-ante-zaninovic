@@ -1,0 +1,58 @@
+{
+  "format": "page",
+  "id": "about",
+  "label": "About",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "person_grid": {
+              "type": "SharedSlice"
+            },
+            "story_and_styles": {
+              "type": "SharedSlice"
+            },
+            "crew_hero": {
+              "type": "SharedSlice"
+            },
+            "text_section": {
+              "type": "SharedSlice"
+            },
+            "about_hero": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO tab": {
+      "meta_title_about": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Title About",
+          "placeholder": "A title of the page used for social media and search engines"
+        }
+      },
+      "meta_description_about": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description About",
+          "placeholder": "A brief summary of the page"
+        }
+      },
+      "meta_image_about": {
+        "type": "Image",
+        "config": {
+          "label": "Meta Image About",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

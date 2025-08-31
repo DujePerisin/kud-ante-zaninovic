@@ -1,0 +1,55 @@
+{
+  "id": "crew_hero",
+  "type": "SharedSlice",
+  "name": "CrewHero",
+  "description": "CrewHero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "tagline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Tagline",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "poster_image": {
+          "type": "Image",
+          "config": {
+            "label": "Poster Image",
+            "constraint": {
+              "width": null,
+              "height": null
+            },
+            "thumbnails": []
+          }
+        },
+        "video_url": {
+          "type": "Text",
+          "config": {
+            "label": "Video URL",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

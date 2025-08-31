@@ -1,0 +1,41 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Spell"
+						}
+					}
+				]
+			},
+			"story": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Mollit amet ex cupidatat veniam aliquip amet irure enim aliqua excepteur ullamco mollit. Commodo esse ex id ipsum eiusmod minim ullamco labore anim occaecat."
+						}
+					}
+				]
+			},
+			"home_base": {
+				"__TYPE__": "FieldContent",
+				"value": "flies",
+				"type": "Text"
+			},
+			"booking_email": {
+				"__TYPE__": "FieldContent",
+				"value": "body",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

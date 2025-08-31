@@ -1,0 +1,51 @@
+{
+  "id": "story_and_styles",
+  "type": "SharedSlice",
+  "name": "StoryAndStyles",
+  "description": "StoryAndStyles",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "story": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Story",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,em,strong"
+          }
+        },
+        "home_base": {
+          "type": "Text",
+          "config": {
+            "label": "Home Base",
+            "placeholder": ""
+          }
+        },
+        "booking_email": {
+          "type": "Text",
+          "config": {
+            "label": "Booking Email",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

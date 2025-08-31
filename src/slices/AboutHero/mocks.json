@@ -1,0 +1,74 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "special",
+				"type": "Text"
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Darkness"
+						}
+					}
+				]
+			},
+			"subheading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Minim amet sint veniam do veniam. Adipisicing eu dolor est sit proident veniam et sunt aliqua. Laborum dolor nulla enim officia eu anim labore."
+						}
+					}
+				]
+			},
+			"preheading": {
+				"__TYPE__": "FieldContent",
+				"value": "require",
+				"type": "Text"
+			},
+			"primary_cta_label": {
+				"__TYPE__": "FieldContent",
+				"value": "post",
+				"type": "Text"
+			},
+			"secondary_cta_label": {
+				"__TYPE__": "FieldContent",
+				"value": "mission",
+				"type": "Text"
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+					"width": 3212,
+					"height": 3880
+				},
+				"url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?rect=0%2C1037%2C3212%2C1807&w=1600&h=900",
+				"width": 1600,
+				"height": 900,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 1037
+					},
+					"background": "transparent"
+				},
+				"alt": "enemy",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": []
+	}
+]

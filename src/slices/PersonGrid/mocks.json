@@ -1,0 +1,83 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"name": {
+				"__TYPE__": "FieldContent",
+				"value": "joined",
+				"type": "Text"
+			},
+			"role": {
+				"__TYPE__": "FieldContent",
+				"value": "thrown",
+				"type": "Text"
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+					"width": 3212,
+					"height": 3880
+				},
+				"url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+				"width": 3212,
+				"height": 3880,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "goes",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"bio": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Do duis occaecat in labore deserunt nostrud. Ullamco deserunt non ullamco mollit mollit proident. Quis qui dolor nisi culpa cillum dolore ea excepteur irure exercitation sint deserunt adipisicing adipisicing ullamco."
+						}
+					}
+				]
+			},
+			"socialmedia1": {
+				"__TYPE__": "RepeatableContent",
+				"type": "Link",
+				"value": [
+					{
+						"key": "eb7eac44-3860-4c12-8dc7-33be3358bc8d",
+						"__TYPE__": "LinkContent",
+						"value": {
+							"__TYPE__": "ExternalLink",
+							"url": "http://twitter.com",
+							"text": "frozen"
+						}
+					}
+				]
+			},
+			"socialmedia2": {
+				"__TYPE__": "RepeatableContent",
+				"type": "Link",
+				"value": [
+					{
+						"__TYPE__": "LinkContent",
+						"key": "6c56ebbd-ec95-4a2d-b8f0-c5bec39c3c00",
+						"value": {
+							"__TYPE__": "ExternalLink",
+							"url": "https://prismic.io",
+							"text": "original"
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

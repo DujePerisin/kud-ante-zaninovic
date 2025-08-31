@@ -20,7 +20,6 @@ const ProductFeature: FC<ProductFeatureProps> = async ({ slice }) => {
     : null;
 
 
-
   return (
     <Bounded
       data-slice-type={slice.slice_type}

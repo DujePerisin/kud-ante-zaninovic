@@ -1,0 +1,76 @@
+{
+  "id": "about_hero",
+  "type": "SharedSlice",
+  "name": "AboutHero",
+  "description": "AboutHero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "preheading": {
+          "type": "Text",
+          "config": {
+            "label": "Preheading",
+            "placeholder": ""
+          }
+        },
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading1"
+          }
+        },
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
+        "subheading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Subheading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,em,strong"
+          }
+        },
+        "primary_cta_label": {
+          "type": "Text",
+          "config": {
+            "label": "Primary CTA Label",
+            "placeholder": ""
+          }
+        },
+        "secondary_cta_label": {
+          "type": "Text",
+          "config": {
+            "label": "Secondary CTA Label",
+            "placeholder": ""
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {
+              "width": 1600,
+              "height": 900
+            },
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

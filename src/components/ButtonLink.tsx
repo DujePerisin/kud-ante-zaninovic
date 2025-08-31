@@ -26,7 +26,7 @@
 
 // Above is the currently PRESENTED official solution, which fails to work due to version issues or some other pi**a mom's
 
-// Below is the ChatGPT's solution for the problem which doesn't show any errors but I currently don't have the time to explore
+// Below is the solution for the problem which doesn't show any errors but I currently don't have the time to explore
 // all of its pros&cons since my work shift is ending soon....
 
 import * as React from "react";
