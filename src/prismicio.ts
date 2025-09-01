@@ -6,9 +6,7 @@ import {
 import { enableAutoPreviews } from "@prismicio/next";
 import sm from "../slicemachine.config.json";
 
-/**
- * The project's Prismic repository name.
- */
+
 export const repositoryName =
   process.env.NEXT_PUBLIC_PRISMIC_ENVIRONMENT || sm.repositoryName;
 
@@ -19,9 +17,10 @@ export const repositoryName =
  */
 // TODO: Update the routes array to match your project's route structure.
 const routes: Route[] = [
-  // Examples:
    { type: "homepage", path: "/" },
    { type: "fragrance", path: "/fragrance/:uid" },
+   { type: "about", path: "/about" },
+   { type: "gallery", path: "/gallery" },
 ];
 
 /**
