@@ -8,6 +8,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { HiBars3, HiMagnifyingGlass, HiUser, HiXMark } from "react-icons/hi2"
 
+import { signIn, signOut, useSession } from "next-auth/react";
+
 type NavIconsProps = {
     className?: string;
     tabIndex?: number;
@@ -37,6 +39,14 @@ type NavBarProps = {
     settings: Content.SettingsDocument
 }
 
+export default function LoginButton() {
+  const { data: session } = useSession();
+  return session ? (
+    <button onClick={() => signOut()}>Sign out</button>
+  ) : (
+    <button onClick={() => signIn("google")}>Sign in with Google</button>
+  );
+}
 
 export const NavBar = ({ settings }: NavBarProps) => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -114,6 +124,15 @@ export const NavBar = ({ settings }: NavBarProps) => {
                             tabIndex={isDrawerOpen ? 0 : -1}
                         />
                     ))}
+                    {/* clanovi link za members-only page */}
+                    <Link
+                        href="/members"
+                        onClick={() => setIsDrawerOpen(false)}
+                        className="block border-b border-white/10 py-2 text-xl font-semibold tracking-wide text-white uppercase hover:text-gray-300"
+                        tabIndex={isDrawerOpen ? 0 : -1}
+                    >
+                        Članovi
+                    </Link>
                     <div className="pt-4 md:hidden">
                         <NavIcons
                             className="justify-around"
