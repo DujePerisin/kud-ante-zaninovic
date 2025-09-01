@@ -11,7 +11,7 @@ export const Footer = () => {
       </h2>
       <div className="container mx-auto px-6">
         <div className="grid gap-10 md:grid-cols-3 max-w-6xl mx-auto">
-          <NavGroup title="O Nama">
+          <NavGroup title="Informacije">
             <NavLink href="#" target="_blank" rel="noopener noreferrer">
               Novosti
             </NavLink>
@@ -35,15 +35,15 @@ export const Footer = () => {
             </NavLink>
           </NavGroup>
 
-          <NavGroup title="O Nama">
-            <NavLink href="#" target="_blank" rel="noopener noreferrer">
-              Novosti
+          <NavGroup title="Više">
+            <NavLink href="#" rel="noopener noreferrer">
+              Početna
             </NavLink>
-            <NavLink href="https://www.google.com/maps/place/Beach+Stara+%C5%A1kola/@43.5482484,16.3871351,20.73z/data=!4m6!3m5!1s0x13355d3f07746de1:0x748f1676a49e932c!8m2!3d43.5482254!4d16.3873749!16s%2Fg%2F11k69kbmjn?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-              Lokacija
+            <NavLink href="/about" rel="noopener noreferrer">
+              O nama
             </NavLink>
-            <NavLink href="/terms/" target="_blank" rel="noopener noreferrer">
-              Pravila Privatnosti
+            <NavLink href="/gallery" rel="noopener noreferrer">
+              Galerija
             </NavLink>
           </NavGroup>
 
