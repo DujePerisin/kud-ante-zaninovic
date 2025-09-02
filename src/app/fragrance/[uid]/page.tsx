@@ -20,20 +20,12 @@ export default async function Page({ params }: { params: Promise<Params> }) {
     <Bounded className="py-10">
       <div className="grid grid-cols-1 items-center gap-10 pb-10 lg:grid-cols-2">
         <div className="relative mb-14 flex justify-center pb-10">
-
           <PrismicNextImage
             field={page.data.bottle_image}
             width={600}
             height={600}
             priority
-            className="absolute top-[90%] -scale-y-100 [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0)_70%,rgba(0,0,0,.15)_100%)]"
-          />
-          <PrismicNextImage
-            field={page.data.bottle_image}
-            width={600}
-            height={600}
-            priority
-            className="relative"
+            className="relative rounded-2xl h-auto w-full object-cover shadow-lg"
           />
 
 

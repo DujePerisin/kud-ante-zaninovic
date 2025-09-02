@@ -26,7 +26,7 @@ export const FragranceDisplay = async ({id}:FragranceDisplayProps) => {
             <div className="absolute inset-0 z-0 ">
                 <PrismicNextImage 
                 field={fragrance.data.feature} 
-                className="object-cover opacity-40 md:opacity-100"
+                className="[-webkit-mask-image:linear-gradient(90deg,transparent,black_90%,black)] [mask-image:linear-gradient(90deg,transparent,black_90%,black)] object-cover opacity-40 md:opacity-100"
                 fill
                 width={1150}
                 quality={90}
@@ -39,7 +39,7 @@ export const FragranceDisplay = async ({id}:FragranceDisplayProps) => {
                     <PrismicText field={fragrance.data.title}/>
                 </h3>
                 <p className="mb-8 text-base font-semibold text-gray-300">
-                    Eau de Perfume
+                    KUD Ante Zaninović
                 </p>
                 <div className="mb-10 max-w-md text-lg text-gray-300">
                     <PrismicRichText field={fragrance.data.description} />

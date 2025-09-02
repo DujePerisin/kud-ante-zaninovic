@@ -135,6 +135,74 @@ interface AboutDocumentData {
 export type AboutDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
 
+type DancesDocumentDataSlicesSlice =
+  | FragranceListSlice
+  | TextSectionSlice
+  | CrewHeroSlice;
+
+/**
+ * Content for Dances documents
+ */
+interface DancesDocumentData {
+  /**
+   * Slice Zone field in *Dances*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dances.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<DancesDocumentDataSlicesSlice> /**
+   * Meta Title field in *Dances*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: dances.meta_title_dances
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */;
+  meta_title_dances: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Dances*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: dances.meta_description_dances
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description_dances: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Dances*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: dances.meta_image_dances
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image_dances: prismic.ImageField<never>;
+}
+
+/**
+ * Dances document from Prismic
+ *
+ * - **API ID**: `dances`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type DancesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<DancesDocumentData>,
+    "dances",
+    Lang
+  >;
+
 type FragranceDocumentDataSlicesSlice = never;
 
 /**
@@ -473,6 +541,7 @@ export type SettingsDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | AboutDocument
+  | DancesDocument
   | FragranceDocument
   | GalleryDocument
   | HomepageDocument
@@ -1726,6 +1795,9 @@ declare module "@prismicio/client" {
       AboutDocument,
       AboutDocumentData,
       AboutDocumentDataSlicesSlice,
+      DancesDocument,
+      DancesDocumentData,
+      DancesDocumentDataSlicesSlice,
       FragranceDocument,
       FragranceDocumentData,
       FragranceDocumentDataSlicesSlice,

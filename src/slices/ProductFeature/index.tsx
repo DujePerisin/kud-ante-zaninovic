@@ -53,21 +53,21 @@ const ProductFeature: FC<ProductFeatureProps> = async ({ slice }) => {
         >
           <PrismicNextImage
             field={fragrance?.data.bottle_image}
-            className="mx-auto -mt-10 w-full -rotate-12 md:-mt-20" /> {/* LOGO UBACI OVDJE */}
+            className="mx-auto -mt-10 w-full md:-mt-20" /> {/* LOGO UBACI OVDJE */}
 
           <div className="flex justify-between p-10 pt-4">
             <div className="space-y-1">
               <h3 className="font-display text-4xl">
                 <PrismicText field={fragrance?.data.title} fallback="Fragrance" />
               </h3>
-              <p className="mt-2 text-gray-400">Eau de Parfum</p>
+              <p className="mt-2 text-gray-400">Svi plesovi na jednom mjestu </p>
               {/* "document" će ih preusmjerit zapravo na prismicio.ts file linije 21-25 */}
               <ButtonLink
                 document={fragrance}
                 variant="Secondary"
                 className="mt-6"
               >
-                Shop Now
+                Saznaj više
               </ButtonLink>
             </div>
           </div>

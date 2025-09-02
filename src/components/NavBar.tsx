@@ -17,15 +17,15 @@ type NavIconsProps = {
 
 const NavIcons = ({ className = "", tabIndex }: NavIconsProps) => (
     <div className={clsx("flex items-center gap-8", className)}>
-        <Link
+        {/* <Link
             href="#"
             className="text-white"
             aria-label="Search"
             tabIndex={tabIndex}>
             <HiMagnifyingGlass size={24} />
-        </Link>
+        </Link> */}
         <Link
-            href="#"
+            href="/members"
             className="text-white"
             aria-label="Account"
             tabIndex={tabIndex}>

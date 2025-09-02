@@ -32,7 +32,7 @@ export const OtherFragrances = async ({
                   field={fragrance.data.bottle_image}
                   width={450}
                   height={450}
-                  className="h-auto w-full"
+                  className="h-auto w-full rounded-lg"
                 />
               </div>
 
