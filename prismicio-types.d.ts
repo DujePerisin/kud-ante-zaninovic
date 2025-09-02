@@ -402,6 +402,7 @@ export type GalleryDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | ButtonSlice
   | VideoSlice
   | CallToActionSlice
   | FragranceListSlice
@@ -860,6 +861,56 @@ export type AlternateGridSlice = prismic.SharedSlice<
   "alternate_grid",
   AlternateGridSliceVariation
 >;
+
+/**
+ * Primary content in *Button → Default → Primary*
+ */
+export interface ButtonSliceDefaultPrimary {
+  /**
+   * Button field in *Button → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: button.default.primary.button
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  button: prismic.Repeatable<
+    prismic.LinkField<
+      string,
+      string,
+      unknown,
+      prismic.FieldState,
+      "Primary" | "Secondary"
+    >
+  >;
+}
+
+/**
+ * Default variation for Button Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ButtonSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ButtonSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Button*
+ */
+type ButtonSliceVariation = ButtonSliceDefault;
+
+/**
+ * Button Shared Slice
+ *
+ * - **API ID**: `button`
+ * - **Description**: Button
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ButtonSlice = prismic.SharedSlice<"button", ButtonSliceVariation>;
 
 /**
  * Primary content in *CallToAction → Default → Primary*
@@ -1822,6 +1873,10 @@ declare module "@prismicio/client" {
       AlternateGridSliceVariation,
       AlternateGridSliceDefault,
       AlternateGridSliceImageRight,
+      ButtonSlice,
+      ButtonSliceDefaultPrimary,
+      ButtonSliceVariation,
+      ButtonSliceDefault,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,
       CallToActionSliceVariation,

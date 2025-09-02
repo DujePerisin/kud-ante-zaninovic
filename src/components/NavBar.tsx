@@ -30,6 +30,7 @@ const NavIcons = ({ className = "", tabIndex }: NavIconsProps) => (
             aria-label="Account"
             tabIndex={tabIndex}>
             <HiUser size={24} />
+            {/* <Image src="/icon.png" alt="KUD Ante Zaninovic" width={50} height={50} /> */}
         </Link>
         {/* tabIndex odlučuje mogu li se elementi fokusirati s TAB-om,  */}
     </div>

@@ -39,8 +39,8 @@
 							[
 								"fragrance",
 								{
-									"__TYPE__": "LinkContent",
 									"key": "bb3f2dbc-5e9d-457b-bb3a-a2e4915f3d2d",
+									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "DocumentLink",
 										"id": "mock_document_id"

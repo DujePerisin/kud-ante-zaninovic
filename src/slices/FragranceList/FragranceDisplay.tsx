@@ -50,7 +50,7 @@ export const FragranceDisplay = async ({id}:FragranceDisplayProps) => {
                 <div className="flex flex-wrap gap-4">
                     {/* samo ce mi jedan buton tribat za linkat na neku drugu stranicu...otom kasniej vise */}
                     <ButtonLink document={fragrance} variant="Secondary">
-                       <IoPeopleSharp className="mr-2"/> <span>About us</span>
+                       <IoPeopleSharp className="mr-2"/> <span>Saznaj više</span>
                     </ButtonLink>
                 </div>
             </FadeIn>

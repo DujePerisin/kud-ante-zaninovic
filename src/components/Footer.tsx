@@ -12,11 +12,11 @@ export const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid gap-10 md:grid-cols-3 max-w-6xl mx-auto">
           <NavGroup title="Informacije">
-            <NavLink href="#" target="_blank" rel="noopener noreferrer">
-              Novosti
-            </NavLink>
             <NavLink href="https://www.google.com/maps/place/Beach+Stara+%C5%A1kola/@43.5482484,16.3871351,20.73z/data=!4m6!3m5!1s0x13355d3f07746de1:0x748f1676a49e932c!8m2!3d43.5482254!4d16.3873749!16s%2Fg%2F11k69kbmjn?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
               Lokacija
+            </NavLink>
+            <NavLink href="/members" target="_blank" rel="noopener noreferrer">
+              Članovi
             </NavLink>
             <NavLink href="/terms/" target="_blank" rel="noopener noreferrer">
               Pravila Privatnosti
