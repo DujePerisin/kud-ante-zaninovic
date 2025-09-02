@@ -39,7 +39,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
 
           <div className="space-y-6">
             <p className="text-mb font-semibold"> {/* Ode potencijalno stavit AUTOR i sa CMS-a fetchat podatke ko ce bit autor */}
-              KUD Ante Zaninović novosti!
+              KUD Ante Zaninović
             </p>
 
             <PrismicRichText field={page.data.description}/>
