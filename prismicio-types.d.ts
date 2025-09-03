@@ -1028,16 +1028,6 @@ export interface CrewHeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
   poster_image: prismic.ImageField<never>;
-
-  /**
-   * Video URL field in *CrewHero → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: crew_hero.default.primary.video_url
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  video_url: prismic.KeyTextField;
 }
 
 /**

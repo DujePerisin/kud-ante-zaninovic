@@ -47,11 +47,6 @@
 				"credits": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
-			},
-			"video_url": {
-				"__TYPE__": "FieldContent",
-				"value": "sing",
-				"type": "Text"
 			}
 		},
 		"items": []

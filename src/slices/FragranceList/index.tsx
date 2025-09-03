@@ -1,25 +1,61 @@
-import { FC } from "react";
-import { Content, isFilled } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+// /slices/FragranceList/index.tsx
 import { Bounded } from "@/components/Bounded";
-import { PrismicNextLink } from "@prismicio/next";
 import { RevealText } from "@/components/RevealText";
-import { FragranceDisplay } from "./FragranceDisplay";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import {
+  Content,
+  isFilled,
+  asText,
+  type ContentRelationshipField,
+} from "@prismicio/client";
+import { createClient } from "@/prismicio";
+import FragranceListClient from "./FragranceListClient";
 
-export type FragranceListProps =
-  SliceComponentProps<Content.FragranceListSlice>;
+export type FragranceListProps = SliceComponentProps<Content.FragranceListSlice>;
 
+// Safe helper: returns a string id or undefined
+function relId(
+  rel: ContentRelationshipField | null | undefined
+): string | undefined {
+  return isFilled.contentRelationship(rel) ? rel.id : undefined;
+}
 
-const FragranceList: FC<FragranceListProps> = ({ slice }) => {
+export default async function FragranceList({ slice }: FragranceListProps) {
+  const client = createClient();
+
+  const items = slice.primary.fragrances ?? [];
+
+  // Collect only valid relationship IDs
+  const ids = items
+    .map((it) => relId(it.fragrance))
+    .filter((id): id is string => !!id);
+
+  const docs = ids.length
+    ? await client.getAllByIDs<Content.FragranceDocument>(ids)
+    : [];
+
+  const fragranceData = docs.map((d) => ({
+    id: d.id,
+    titleText: asText(d.data.title),
+    // ⬇️ make sure this matches your Select field API ID
+    scent_profile: (d.data as any).scent_profile ?? "Unknown",
+    doc: d,
+  }));
+
+  const profiles = Array.from(
+    new Set(fragranceData.map((f) => f.scent_profile).filter(Boolean))
+  );
+
   return (
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="space-y-8 bg-black py-16 text-center text-white md:py-24"
     >
-      <div className="mx-auto space-y-8 ">
-
-        <p className="text-sm font-light tracking-[0.2em] uppercase opacity-50">{slice.primary.eyebrow}</p>
+      <div className="mx-auto space-y-8">
+        <p className="text-sm font-light tracking-[0.2em] uppercase opacity-50">
+          {slice.primary.eyebrow}
+        </p>
 
         <RevealText
           field={slice.primary.heading}
@@ -31,28 +67,16 @@ const FragranceList: FC<FragranceListProps> = ({ slice }) => {
           className="font-display text-5xl uppercase sm:text-6xl md:text-7xl lg:text-8xl"
         />
 
-        <div className="mx-auto max-w-2xl text-lg text-balance text-gray-300">
+        <div className="mx-auto max-w-2xl text-balance text-lg text-gray-300">
           <PrismicRichText field={slice.primary.body} />
         </div>
 
-        <div className="grid mt-12 grid-cols-1 gap-12">
-          {slice.primary.fragrances.map((item) => {
-            if (isFilled.contentRelationship(item.fragrance)) {
-
-              return (
-                /* Display komponenta ce ic ode */
-                <FragranceDisplay
-                  key={item.fragrance.id}
-                  id={item.fragrance.id}
-                />
-
-              )
-            }
-          })}
-        </div>
+        <FragranceListClient
+          slice={slice}
+          fragranceData={fragranceData}
+          profiles={["all", ...profiles]}
+        />
       </div>
     </Bounded>
   );
-};
-
-export default FragranceList;
+}

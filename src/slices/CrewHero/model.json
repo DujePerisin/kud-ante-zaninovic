@@ -40,13 +40,6 @@
             },
             "thumbnails": []
           }
-        },
-        "video_url": {
-          "type": "Text",
-          "config": {
-            "label": "Video URL",
-            "placeholder": ""
-          }
         }
       },
       "items": {}

@@ -36,13 +36,13 @@ const CrewHero: FC<CrewHeroProps> = async ({ slice }) => {
         <PrismicNextImage field={slice.primary.poster_image} alt="" priority fill className="object-cover motion-reduce:opacity-50" />
       </FadeIn>
       </div>
-      <Lazy rootMargin="1500px" className="hidden md:block relative overflow-hidden md:aspect-video">
+      {/* <Lazy rootMargin="1500px" className="hidden md:block relative overflow-hidden md:aspect-video">
               <iframe
                 src={`https://www.youtube-nocookie.com/embed/${slice.primary.video_url}?autoplay=1&mute=1&loop=1&playlist=${slice.primary.video_url}`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 className="pointer-events-none absolute left-1/2 aspect-video h-full -translate-x-1/2"
               />
-            </Lazy>
+            </Lazy> */}
     </Bounded>
   );
 };
