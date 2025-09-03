@@ -45,7 +45,7 @@ export default async function GalleryLayout({ children }: { children: ReactNode 
     >
       <NavBar settings={settings} />
       <main className="pt-14 md:pt-16">{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </section>
   );
 }

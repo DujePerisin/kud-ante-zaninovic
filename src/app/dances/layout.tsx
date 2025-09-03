@@ -45,7 +45,7 @@ export default async function DancesLayout({ children }: { children: ReactNode }
     >
       <NavBar settings={settings} />
       <main className="pt-1 md:pt-1">{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </section>
   );
 }
