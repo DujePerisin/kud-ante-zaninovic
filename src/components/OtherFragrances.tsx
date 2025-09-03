@@ -20,7 +20,7 @@ export const OtherFragrances = async ({
   return (
     <div className="container mx-auto px-4">
       <h2 className="font-display mb-8 text-3xl text-white md:text-4xl">
-        You may also like
+        Možda će vam se svidjeti i ovo
       </h2>
 
       <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -40,10 +40,7 @@ export const OtherFragrances = async ({
                 <h3 className="font-display text-2xl">
                   <PrismicText field={fragrance.data.title} />
                 </h3>
-                <p className="text-sm text-neutral-400">Eau de Parfum</p>
-                <p className="text-base font-light">
-                  {formatPrice(fragrance.data.price)}
-                </p>
+                <p className="text-sm text-neutral-400">{fragrance.data.scent_profile}</p>
               </div>
             </PrismicNextLink>
           </li>

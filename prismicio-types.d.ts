@@ -1123,6 +1123,24 @@ export interface FragranceListSliceDefaultPrimary {
   fragrances: prismic.GroupField<
     Simplify<FragranceListSliceDefaultPrimaryFragrancesItem>
   >;
+
+  /**
+   * Button field in *FragranceList → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: fragrance_list.default.primary.button
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  button: prismic.Repeatable<
+    prismic.LinkField<
+      string,
+      string,
+      unknown,
+      prismic.FieldState,
+      "Primary" | "Secondary"
+    >
+  >;
 }
 
 /**

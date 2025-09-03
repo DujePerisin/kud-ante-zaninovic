@@ -1,15 +1,24 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { isFilled, type ContentRelationshipField } from "@prismicio/client";
+import {
+  isFilled,
+  type ContentRelationshipField,
+  type LinkField,
+} from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { Content } from "@prismicio/client";
+import { PrismicNextLink } from "@prismicio/next";
 import { FragranceDisplay } from "./FragranceDisplay";
 
 function relId(
   rel: ContentRelationshipField | null | undefined
 ): string | undefined {
   return isFilled.contentRelationship(rel) ? rel.id : undefined;
+}
+
+function isLinkField(val: unknown): val is LinkField {
+  return !!val && typeof val === "object" && "link_type" in (val as Record<string, unknown>);
 }
 
 type FragranceLite = {
@@ -31,6 +40,7 @@ export default function FragranceListClient({
   profiles,
 }: Props) {
   const [selectedProfile, setSelectedProfile] = useState("all");
+  const [showCount, setShowCount] = useState(2); // show N at a time -----------------------------------------------------------
   const userInteractedRef = useRef(false);
 
   const byId = useMemo(() => {
@@ -54,27 +64,49 @@ export default function FragranceListClient({
     return out;
   }, [slice.primary.fragrances, byId, selectedProfile]);
 
-  // Snap-on: only after user changes the filter (not on first render)
+  const displayedDocs = useMemo(
+    () => visibleDocs.slice(0, showCount),
+    [visibleDocs, showCount]
+  );
+
   const firstRef = useRef<HTMLDivElement>(null);
   const [pulse, setPulse] = useState(false);
 
   useEffect(() => {
     if (!userInteractedRef.current) return;
-    if (!visibleDocs.length) return;
+    if (!displayedDocs.length) return;
     firstRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     setPulse(true);
     const t = setTimeout(() => setPulse(false), 300);
     return () => clearTimeout(t);
-  }, [selectedProfile, visibleDocs.length]);
+  }, [selectedProfile, displayedDocs.length]);
 
   const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     userInteractedRef.current = true;
     setSelectedProfile(e.target.value);
+    setShowCount(3); // reset pagination on filter change --------------------------------------------------------------------
   };
+
+  const rawButtons = (slice.primary as Record<string, unknown>)["button"];
+  const buttons: Array<{ field: LinkField; className?: string }> = [];
+  if (Array.isArray(rawButtons)) {
+    for (const item of rawButtons) {
+      if (isLinkField(item)) {
+        buttons.push({ field: item });
+      } else if (item && typeof item === "object") {
+        const rec = item as Record<string, unknown>;
+        const lf = rec["link"];
+        if (isLinkField(lf)) {
+          const className = typeof rec["variant"] === "string" ? (rec["variant"] as string) : undefined;
+          buttons.push({ field: lf, className });
+        }
+      }
+    }
+  }
 
   return (
     <div className="mt-8 md:mt-12 md:grid md:grid-cols-[240px,1fr] md:gap-8">
-      <aside className="mb-6 flex justify-center md:mb-0 md:justify-center-safe">
+      <aside className="mb-6 flex justify-center md:mb-0">
         <div className="w-64">
           <select
             id="fragrance-filter"
@@ -91,9 +123,9 @@ export default function FragranceListClient({
         </div>
       </aside>
 
-      {/* Grid of cards */}
+      {/* Cards (in batches of N) */}
       <div className="grid grid-cols-1 gap-12">
-        {visibleDocs.map((doc, idx) => (
+        {displayedDocs.map((doc, idx) => (
           <div
             key={doc.id + selectedProfile}
             ref={idx === 0 ? firstRef : undefined}
@@ -103,6 +135,44 @@ export default function FragranceListClient({
             <FragranceDisplay doc={doc} priority={idx === 0} />
           </div>
         ))}
+
+        {/* Load more (next N) */}
+        {showCount < visibleDocs.length && (
+          <div className="mt-2 flex justify-center">
+            <button
+              onClick={() =>
+                setShowCount((n) => Math.min(n + 3, visibleDocs.length))
+              }
+              className="rounded-md border border-white/20 px-4 py-2 text-sm uppercase tracking-wide hover:bg-white/10"
+            >
+              Učitaj još
+            </button>
+          </div>
+        )}
+
+        {buttons.length > 0 && (
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            {buttons.map((b, i) => {
+              const isLast = i === buttons.length - 1;
+
+              const keyFromField =
+                ("id" in b.field && typeof b.field.id === "string" && b.field.id) ||
+                ("url" in b.field && typeof b.field.url === "string" && b.field.url) ||
+                String(i);
+
+              const comfyBorder =
+                "inline-flex w-auto items-center whitespace-nowrap rounded-lg border border-white/30 px-4 py-2 text-sm leading-none hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/30";
+
+              return (
+                <PrismicNextLink
+                  key={keyFromField}
+                  field={b.field}
+                  className={`${b.className ?? ""} ${isLast ? comfyBorder : ""}`.trim()}
+                />
+              );
+            })}
+          </div>
+        )}
       </div>
     </div>
   );

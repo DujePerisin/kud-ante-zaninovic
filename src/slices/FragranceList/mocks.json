@@ -50,6 +50,22 @@
 						]
 					}
 				]
+			},
+			"button": {
+				"__TYPE__": "RepeatableContent",
+				"type": "Link",
+				"value": [
+					{
+						"__TYPE__": "LinkContent",
+						"key": "5abdea27-0f82-4c8a-9587-ad4b1b2b9f1c",
+						"value": {
+							"__TYPE__": "ExternalLink",
+							"url": "https://prismic.io",
+							"text": "such",
+							"variant": "Secondary"
+						}
+					}
+				]
 			}
 		},
 		"items": []
