@@ -44,7 +44,7 @@ export default async function DancesLayout({ children }: { children: ReactNode }
       className={`${raleway.variable} ${gambarino.variable} bg-neutral-900 text-white min-h-screen antialiased`}
     >
       <NavBar settings={settings} />
-      <main className="pt-14 md:pt-16">{children}</main>
+      <main className="pt-1 md:pt-1">{children}</main>
       <Footer />
     </section>
   );

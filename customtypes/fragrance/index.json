@@ -57,9 +57,9 @@
         "type": "Select",
         "config": {
           "label": "Scent Profile",
-          "placeholder": "",
-          "options": ["spicy", "woody", "fresh"],
-          "default_value": "spicy"
+          "placeholder": "Otkrij ....",
+          "options": ["Dalmacija", "Dalmatinska zagora", "Hrvatski otoci"],
+          "default_value": "Dalmacija"
         }
       },
       "mood": {

@@ -268,13 +268,16 @@ interface FragranceDocumentData {
    * Scent Profile field in *Fragrance*
    *
    * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **Default Value**: spicy
+   * - **Placeholder**: Otkrij ....
+   * - **Default Value**: Dalmacija
    * - **API ID Path**: fragrance.scent_profile
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/select
    */
-  scent_profile: prismic.SelectField<"spicy" | "woody" | "fresh", "filled">;
+  scent_profile: prismic.SelectField<
+    "Dalmacija" | "Dalmatinska zagora" | "Hrvatski otoci",
+    "filled"
+  >;
 
   /**
    * Mood field in *Fragrance*
