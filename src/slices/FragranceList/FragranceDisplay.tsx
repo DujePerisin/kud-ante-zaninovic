@@ -1,4 +1,3 @@
-// /slices/FragranceList/FragranceDisplay.tsx
 "use client";
 
 import { ButtonLink } from "@/components/ButtonLink";
@@ -10,7 +9,7 @@ import { IoPeopleSharp } from "react-icons/io5";
 
 type FragranceDisplayProps = {
   doc: Content.FragranceDocument;
-  priority?: boolean; // NEW
+  priority?: boolean;
 };
 
 export const FragranceDisplay = ({ doc, priority = false }: FragranceDisplayProps) => {
@@ -28,11 +27,9 @@ export const FragranceDisplay = ({ doc, priority = false }: FragranceDisplayProp
             <PrismicNextImage
               field={feature}
               fill
-              // Eager-load the first item of a filtered view:
               priority={priority}
               loading={priority ? "eager" : undefined}
               fetchPriority={priority ? "high" : undefined}
-              // Lighter, faster images from Imgix:
               imgixParams={{ auto: ["format", "compress"], q: 60 }}
               sizes="(min-width: 1024px) 1150px, 100vw"
               className="object-cover opacity-40 md:opacity-100 [-webkit-mask-image:linear-gradient(90deg,transparent,black_90%,black)] [mask-image:linear-gradient(90deg,transparent,black_90%,black)]"

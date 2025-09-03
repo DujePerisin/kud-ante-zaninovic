@@ -6,7 +6,6 @@ import { SliceComponentProps } from "@prismicio/react";
 import { Content } from "@prismicio/client";
 import { FragranceDisplay } from "./FragranceDisplay";
 
-/** Safe helper: extract id from a content relationship */
 function relId(
   rel: ContentRelationshipField | null | undefined
 ): string | undefined {
@@ -34,14 +33,12 @@ export default function FragranceListClient({
   const [selectedProfile, setSelectedProfile] = useState("all");
   const userInteractedRef = useRef(false);
 
-  // O(1) lookups
   const byId = useMemo(() => {
     const m = new Map<string, FragranceLite>();
     for (const f of fragranceData) m.set(f.id, f);
     return m;
   }, [fragranceData]);
 
-  // Which docs are visible for current filter
   const visibleDocs = useMemo(() => {
     const items = slice.primary.fragrances ?? [];
     const out: Content.FragranceDocument[] = [];
@@ -62,7 +59,7 @@ export default function FragranceListClient({
   const [pulse, setPulse] = useState(false);
 
   useEffect(() => {
-    if (!userInteractedRef.current) return;     // skip initial load
+    if (!userInteractedRef.current) return;
     if (!visibleDocs.length) return;
     firstRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     setPulse(true);
@@ -77,7 +74,6 @@ export default function FragranceListClient({
 
   return (
     <div className="mt-8 md:mt-12 md:grid md:grid-cols-[240px,1fr] md:gap-8">
-      {/* Left column on md+, centered on small */}
       <aside className="mb-6 flex justify-center md:mb-0 md:justify-center-safe">
         <div className="w-64">
           <select
@@ -101,9 +97,8 @@ export default function FragranceListClient({
           <div
             key={doc.id + selectedProfile}
             ref={idx === 0 ? firstRef : undefined}
-            className={`scroll-mt-24 transition-transform duration-300 ${
-              pulse && idx === 0 ? "scale-[1.01] ring-2 ring-white/30 rounded-2xl" : ""
-            }`}
+            className={`scroll-mt-24 transition-transform duration-300 ${pulse && idx === 0 ? "scale-[1.01] ring-2 ring-white/30 rounded-2xl" : ""
+              }`}
           >
             <FragranceDisplay doc={doc} priority={idx === 0} />
           </div>

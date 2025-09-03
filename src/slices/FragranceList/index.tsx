@@ -1,4 +1,3 @@
-// /slices/FragranceList/index.tsx
 import { Bounded } from "@/components/Bounded";
 import { RevealText } from "@/components/RevealText";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
@@ -13,19 +12,20 @@ import FragranceListClient from "./FragranceListClient";
 
 export type FragranceListProps = SliceComponentProps<Content.FragranceListSlice>;
 
-// Safe helper: returns a string id or undefined
 function relId(
   rel: ContentRelationshipField | null | undefined
 ): string | undefined {
   return isFilled.contentRelationship(rel) ? rel.id : undefined;
 }
 
+type FragranceDocData = Content.FragranceDocument["data"] & {
+  scent_profile?: string | null;
+};
+
 export default async function FragranceList({ slice }: FragranceListProps) {
   const client = createClient();
 
   const items = slice.primary.fragrances ?? [];
-
-  // Collect only valid relationship IDs
   const ids = items
     .map((it) => relId(it.fragrance))
     .filter((id): id is string => !!id);
@@ -34,13 +34,15 @@ export default async function FragranceList({ slice }: FragranceListProps) {
     ? await client.getAllByIDs<Content.FragranceDocument>(ids)
     : [];
 
-  const fragranceData = docs.map((d) => ({
-    id: d.id,
-    titleText: asText(d.data.title),
-    // ⬇️ make sure this matches your Select field API ID
-    scent_profile: (d.data as any).scent_profile ?? "Unknown",
-    doc: d,
-  }));
+  const fragranceData = docs.map((d) => {
+    const data = d.data as FragranceDocData; // typed, not any
+    return {
+      id: d.id,
+      titleText: asText(data.title),
+      scent_profile: data.scent_profile ?? "Unknown",
+      doc: d,
+    };
+  });
 
   const profiles = Array.from(
     new Set(fragranceData.map((f) => f.scent_profile).filter(Boolean))

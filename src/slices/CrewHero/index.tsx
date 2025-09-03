@@ -5,7 +5,6 @@ import { Bounded } from "@/components/Bounded";
 import { Content, isFilled } from "@prismicio/client";
 import { FC } from "react";
 import { PrismicNextImage } from "@prismicio/next";
-import { Lazy } from "@/components/Lazy";
 
 
 export type CrewHeroProps =
