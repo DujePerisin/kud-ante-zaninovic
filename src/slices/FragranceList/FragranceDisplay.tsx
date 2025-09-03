@@ -13,13 +13,13 @@ type FragranceDisplayProps = {
 };
 
 export const FragranceDisplay = ({ doc, priority = false }: FragranceDisplayProps) => {
-  const { feature, title, description } = doc.data as any;
+  const { feature, title, description } = doc.data;
 
   return (
     <FadeIn
       className="relative z-10 grid min-h-[85vh] w-full translate-y-20 items-center justify-items-start border border-white/10 p-4 text-left md:p-14 lg:p-20"
       vars={{ duration: 1.5 }}
-      start="top 75%"
+      start="top 90%"
     >
       {isFilled.image(feature) && (
         <div className="absolute inset-0 z-0">
