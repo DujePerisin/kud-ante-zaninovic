@@ -6,6 +6,8 @@ import { Footer } from "@/components/Footer";
 import { NavBar } from "@/components/NavBar";
 import { createClient } from "@/prismicio";
 import { isFilled } from "@prismicio/client";
+import { Providers } from "./providers";
+import LoginToast from "@/components/LoginToast";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -27,9 +29,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: settings.data.site_title,
     description: settings.data.meta_description,
     openGraph: {
-      images: isFilled.image(settings.data.fallback_og_image) 
-      ? [settings.data.fallback_og_image.url]
-      : ["/bili-logo.jpg"]
+      images: isFilled.image(settings.data.fallback_og_image)
+        ? [settings.data.fallback_og_image.url]
+        : ["/bili-logo.jpg"]
     }
   }
 }
@@ -50,9 +52,12 @@ export default async function RootLayout({
       className={`${raleway.variable} ${gambarino.variable} antialiased`}
     >
       <body className="bg-neutral-900 text-white">
-        <NavBar settings={settings}/>
-        <main className="pt-14 md:pt-16"> {children} </main>
-        <Footer />
+        <Providers>
+          <NavBar settings={settings} />
+              <LoginToast />
+          <main className="pt-14 md:pt-16"> {children} </main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
