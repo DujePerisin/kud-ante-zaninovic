@@ -5,7 +5,6 @@ import { SliceComponentProps } from "@prismicio/react";
 export type ButtonProps = SliceComponentProps<Content.ButtonSlice>;
 
 import { Bounded } from "@/components/Bounded";
-import Link from "next/link";
 import { PrismicNextLink } from "@prismicio/next";
 
 const Button: FC<ButtonProps> = ({ slice }) => {

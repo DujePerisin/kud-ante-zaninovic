@@ -1,7 +1,6 @@
-// /src/slices/PersonGrid/index.tsx
 import { FC } from "react";
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import { FadeIn } from "@/components/FadeIn";
 import { RevealText } from "@/components/RevealText";
 import { Bounded } from "@/components/Bounded";

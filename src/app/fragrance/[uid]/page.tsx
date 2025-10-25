@@ -1,10 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { asImageSrc, asText } from "@prismicio/client";
-import { PrismicRichText, PrismicText, SliceZone } from "@prismicio/react";
+import { PrismicRichText, PrismicText } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
 import { Bounded } from "@/components/Bounded";
 import { PrismicNextImage } from "@prismicio/next";
 import { OtherFragrances } from "@/components/OtherFragrances";

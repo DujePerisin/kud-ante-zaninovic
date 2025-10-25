@@ -4,7 +4,7 @@ import { useState } from "react";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import { HiBars3, HiUser, HiXMark } from "react-icons/hi2";
+import { HiBars3, HiXMark } from "react-icons/hi2";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { Content } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
@@ -14,10 +14,10 @@ type NavIconsProps = {
   tabIndex?: number;
 };
 
-const NavIcons = ({ className = "", tabIndex }: NavIconsProps) => {
+const NavIcons = ({ tabIndex }: NavIconsProps) => {
   const { data: session } = useSession();
-  const avatar = session?.user?.image;
-  const name = session?.user?.name ?? "Korisnik";
+  // const avatar = session?.user?.image;
+  // const name = session?.user?.name ?? "Korisnik";
 
   return (
     // <div className={clsx("flex items-center gap-8", className)}>

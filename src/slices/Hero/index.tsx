@@ -2,8 +2,7 @@ import { FC } from "react";
 
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { PrismicNextLink, PrismicNextImage } from "@prismicio/next";
-import clsx from "clsx";
+import { PrismicNextImage } from "@prismicio/next";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
