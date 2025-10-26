@@ -15,7 +15,7 @@ type NavIconsProps = {
 };
 
 const NavIcons = ({ tabIndex }: NavIconsProps) => {
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
   // const avatar = session?.user?.image;
   // const name = session?.user?.name ?? "Korisnik";
 
