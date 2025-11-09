@@ -1,0 +1,85 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Laborum cillum minim tempor esse Lorem pariatur ea excepteur pariatur in excepteur nisi et officia. Labore consectetur minim excepteur non. Eu consectetur irure cillum eu amet occaecat esse cupidatat est nostrud Lorem Lorem."
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ullamco minim laboris minim est sunt officia aute. Et nulla non nisi aliquip tempor non non fugiat aliqua officia mollit anim id dolore. Eu anim irure sunt commodo."
+						}
+					}
+				]
+			},
+			"details": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "maybe",
+									"type": "Text"
+								}
+							],
+							[
+								"value",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "stream",
+									"type": "Text"
+								}
+							],
+							[
+								"type",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "phone",
+									"type": "Select"
+								}
+							],
+							[
+								"url",
+								{
+									"key": "df8c5689-5d8d-41ad-87c2-05ba772e17cf",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "softly"
+									}
+								}
+							],
+							[
+								"note",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "accept",
+									"type": "Text"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

@@ -177,14 +177,14 @@ export const NavBar = ({ settings }: NavBarProps) => {
           ))}
 
           {/* Members link */}
-          <Link
+          {/* <Link
             href="/members"
             onClick={() => setIsDrawerOpen(false)}
             className="block border-b border-white/10 py-2 text-xl font-semibold uppercase tracking-wide text-white hover:text-gray-300"
             tabIndex={isDrawerOpen ? 0 : -1}
           >
             Članovi
-          </Link>
+          </Link> */}
 
           {/* Icons on mobile inside drawer */}
           <div className="pt-4 md:hidden flex justify-center">

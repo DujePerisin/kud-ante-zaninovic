@@ -10,7 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 type RevealTextProps = {
-    field: RichTextField;
+    field: RichTextField | string;
     id: string;
     className?: string;
     staggerAmount?: number;
@@ -34,7 +34,8 @@ export const RevealText = ({
 }: RevealTextProps) => {
     const componentRef = useRef<HTMLDivElement>(null);
     //iz rich text u obicni text i podijeli ga pri svakom razmaku
-    const words = asText(field).split(" ");
+    const text = typeof field === 'string' ? field : asText(field) ?? '';
+    const words = text.split(" ");
 
     useGSAP(
         () => {

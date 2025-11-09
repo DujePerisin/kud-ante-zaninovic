@@ -40,6 +40,14 @@
             },
             "thumbnails": []
           }
+        },
+        "badge_image": {
+          "type": "Image",
+          "config": {
+            "label": "Badge Image",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}

@@ -12,60 +12,27 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "preheading": {
-          "type": "Text",
-          "config": {
-            "label": "Preheading",
-            "placeholder": ""
-          }
-        },
-        "heading": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Heading",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "heading1"
-          }
-        },
-        "eyebrow": {
+        "eyebrow_about": {
           "type": "Text",
           "config": {
             "label": "Eyebrow",
             "placeholder": ""
           }
         },
-        "subheading": {
+        "title_about": {
           "type": "StructuredText",
           "config": {
-            "label": "Subheading",
+            "label": "Title",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,em,strong"
+            "single": "paragraph,heading1,heading2,strong,em"
           }
         },
-        "primary_cta_label": {
-          "type": "Text",
-          "config": {
-            "label": "Primary CTA Label",
-            "placeholder": ""
-          }
-        },
-        "secondary_cta_label": {
-          "type": "Text",
-          "config": {
-            "label": "Secondary CTA Label",
-            "placeholder": ""
-          }
-        },
-        "image": {
+        "image_about": {
           "type": "Image",
           "config": {
             "label": "Image",
-            "constraint": {
-              "width": 1600,
-              "height": 900
-            },
+            "constraint": {},
             "thumbnails": []
           }
         }

@@ -190,6 +190,101 @@ const TermsPage = () => {
                     odredbe. Za dodatne informacije kontaktirajte nas putem
                     službenih kanala.
                 </p>
+                <p>🇭🇷 Politika privatnosti
+Općenito
+
+Kulturno-umjetničko društvo KUD Ante Zaninović poštuje privatnost svojih posjetitelja i obvezuje se štititi osobne podatke koji se prikupljaju putem ove web stranice kudantezaninovic.hr u skladu s Općom uredbom o zaštiti podataka (GDPR) i važećim zakonima Republike Hrvatske.
+
+Ova politika privatnosti objašnjava koje podatke prikupljamo, zašto ih prikupljamo i kako ih koristimo.
+
+Prikupljanje i korištenje podataka
+
+Ova web stranica ne prikuplja osobne podatke osim u slučajevima kada ih korisnik dobrovoljno dostavi putem obrasca za kontakt ili putem e-pošte.
+
+U tom slučaju prikupljeni podaci (ime, adresa e-pošte i poruka) koriste se isključivo u svrhu odgovora na upit korisnika i ne dijele se s trećim stranama.
+
+Kolačići (Cookies)
+
+Ova stranica može koristiti osnovne tehničke kolačiće koji su nužni za pravilno funkcioniranje stranice.
+Ne koristimo kolačiće u svrhe oglašavanja ili praćenja korisnika.
+
+Poveznice na druge web stranice
+
+Web stranica može sadržavati poveznice na druge web stranice (npr. partnerske udruge, medije, društvene mreže).
+Nismo odgovorni za sadržaj ni za politiku privatnosti tih stranica.
+
+Sigurnost
+
+Sva komunikacija između korisnika i web stranice odvija se putem sigurne HTTPS veze, čime se sprječava neovlašteni pristup podacima.
+
+Prava korisnika
+
+Korisnik ima pravo zatražiti pristup, ispravak ili brisanje svojih osobnih podataka koji su eventualno dostavljeni putem kontakt obrasca.
+Za ostvarivanje tih prava možete nas kontaktirati putem e-pošte na adresu:
+
+📧kud.antezaninovic@gmail.com
+
+Promjene politike privatnosti
+
+KUD Ante Zaninović može povremeno ažurirati ovu politiku privatnosti. Sve promjene bit će objavljene na ovoj stranici s ažuriranim datumom.
+
+Kontakt
+
+Za sva pitanja vezana uz zaštitu privatnosti obratite se na:
+Kulturno-umjetničko društvo KUD Ante Zaninović
+Kaštela, Republika Hrvatska
+
+📧kud.antezaninovic@gmail.com
+--------
+
+🇬🇧 Privacy Policy (English translation)
+General information
+
+The Cultural and Artistic Association KUD Ante Zaninović respects the privacy of visitors and is committed to protecting personal data collected through this website kudantezaninovic.hr, in accordance with the General Data Protection Regulation (GDPR) and applicable Croatian law.
+
+This privacy policy explains what data we collect, why we collect it, and how it is used.
+
+Data collection and use
+
+This website does not collect any personal data, except when users voluntarily submit their information via the contact form or by email.
+
+In such cases, the data provided (name, email address, message) is used only to respond to the user’s inquiry and is not shared with any third parties.
+
+Cookies
+
+This site may use basic technical cookies that are necessary for its proper functioning.
+We do not use cookies for advertising or user tracking.
+
+Links to other websites
+
+Our website may contain links to other websites (partner organizations, media outlets, social networks).
+We are not responsible for the content or privacy practices of those websites.
+
+Security
+
+All communication between visitors and this website is protected via secure HTTPS encryption, preventing unauthorized access to any transmitted data.
+
+User rights
+
+Users have the right to request access to, correction, or deletion of their personal data submitted via the contact form.
+To exercise these rights, please contact us at:
+
+📧kud.antezaninovic@gmail.com
+
+Changes to this policy
+
+KUD Ante Zaninović may occasionally update this privacy policy. Any changes will be published on this page with an updated revision date.
+
+Contact
+
+For any privacy-related questions, please contact:
+Cultural and Artistic Association KUD Ante Zaninović
+Kaštela, Croatia
+
+📧kud.antezaninovic@gmail.com
+
+
+</p>
             </FadeIn>
         </section>
     );

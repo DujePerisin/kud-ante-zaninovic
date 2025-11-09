@@ -1,0 +1,92 @@
+{
+  "id": "contact_details",
+  "type": "SharedSlice",
+  "name": "ContactDetails",
+  "description": "ContactDetails",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,heading1,heading2,heading3,strong,em"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2,heading3,strong,em"
+          }
+        },
+        "details": {
+          "type": "Group",
+          "config": {
+            "label": "Details",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label",
+                  "placeholder": "email"
+                }
+              },
+              "value": {
+                "type": "Text",
+                "config": {
+                  "label": "Value",
+                  "placeholder": "info@kudantezaninovic.hr"
+                }
+              },
+              "type": {
+                "type": "Select",
+                "config": {
+                  "label": "Type",
+                  "placeholder": "",
+                  "options": [
+                    "text",
+                    "email",
+                    "phone",
+                    "link"
+                  ],
+                  "default_value": "text"
+                }
+              },
+              "url": {
+                "type": "Link",
+                "config": {
+                  "label": "Url",
+                  "placeholder": "https://kudantezaninovic.hr",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              },
+              "note": {
+                "type": "Text",
+                "config": {
+                  "label": "Note",
+                  "placeholder": "\"Voditelj plesne grupe\""
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

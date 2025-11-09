@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import localFont from 'next/font/local'
 import "../globals.css";
-import { Footer } from "@/components/Footer";
 import { NavBar } from "@/components/NavBar";
 import { createClient } from "@/prismicio";
 import { isFilled } from "@prismicio/client";
