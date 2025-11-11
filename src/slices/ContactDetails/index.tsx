@@ -103,7 +103,7 @@ const ContactDetails: FC<ContactDetailsProps> = ({ slice }) => {
               );
             })}
           </div>
-                    <FadeIn
+          <FadeIn
             vars={{ duration: 0.6 }}
             start="top 90%"
             className="

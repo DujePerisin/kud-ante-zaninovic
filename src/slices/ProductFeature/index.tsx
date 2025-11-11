@@ -62,8 +62,16 @@ const ProductFeature: FC<ProductFeatureProps> = async ({ slice }) => {
               </h3>
               <p className="mt-2 text-gray-400">Svi plesovi na jednom mjestu </p>
               {/* "document" će ih preusmjerit zapravo na prismicio.ts file linije 21-25 */}
-              <ButtonLink
+              {/* <ButtonLink
                 document={fragrance}
+                variant="Secondary"
+                className="mt-6"
+              >
+                Saznaj više
+              </ButtonLink> */}
+              {/* privremeno rjesenje da vodi na same plesove dok ne sredimo do kraja web */}
+              <ButtonLink
+                href="/dances"
                 variant="Secondary"
                 className="mt-6"
               >
