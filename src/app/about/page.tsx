@@ -14,18 +14,18 @@ export default function AboutPage() {
         <div className="relative flex w-full h-60 sm:h-72 md:h-80 lg:h-[24rem] xl:h-[28rem] items-stretch">
           <div className="relative z-30 flex flex-col justify-center flex-[0_0_58%] px-4 sm:px-6 md:px-10 lg:px-12">
             <FadeIn vars={{ delay: 0.8, duration: 0.8 }} className="mb-3 sm:mb-4">
-              <p className="text-[9px] sm:text-xs md:text-sm font-semibold tracking-[0.4em] sm:tracking-[0.5em] uppercase">
+              <p className="text-[8px] sm:text-xs md:text-sm font-semibold tracking-[0.4em] sm:tracking-[0.5em] uppercase">
                 kud ante zaninović
               </p>
             </FadeIn>
 
             <RevealText
-              field="Naša kaštelanska priča"
+              field="Kaštelanska priča"
               id="abouthero-heading"
               className="
                           font-display leading-none text-neutral-50
                           text-nowrap md:tracking-wider
-                          text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
+                          text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
                           max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl
                         "
               staggerAmount={0.2}
@@ -44,13 +44,13 @@ export default function AboutPage() {
                             origin-center
 
                             /* posebni media queries / custom media queries */
-                            scale-[2.00] translate-x-8 translate-y-15
+                            scale-[2.70] translate-x-8 translate-y-15
 
-                            sm:scale-[1.66] sm:translate-x-8 sm:translate-y-10
+                            sm:scale-[1.70] sm:translate-x-8 sm:translate-y-10
 
-                            md:scale-[1.46] md:translate-x-8 md:translate-y-10
+                            md:scale-[1.50] md:translate-x-8 md:translate-y-10
 
-                            lg:scale-[1.26] lg:translate-x-8 lg:translate-y-10
+                            lg:scale-[1.30] lg:translate-x-8 lg:translate-y-10
 
                             xl:scale-120 xl:translate-x-0 xl:translate-y-0
                           "              

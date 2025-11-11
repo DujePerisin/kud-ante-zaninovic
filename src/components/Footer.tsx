@@ -121,6 +121,7 @@
 import { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { SocialLink } from "./SocialLink";
 
 export const Footer = () => {
   return (
@@ -147,20 +148,16 @@ export const Footer = () => {
           </NavGroup>
 
           <NavGroup title="Mreže">
-            <NavLink
-              href="https://www.instagram.com/kudantezaninovic/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </NavLink>
-            <NavLink
-              href="https://www.facebook.com/p/KUD-Ante-Zaninovic-100063625745937/?locale=hr_HR"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Facebook
-            </NavLink>
+            <SocialLink
+              label="Instagram"
+              appUrl="instagram://user?username=kudantezaninovic"
+              webUrl="https://www.instagram.com/kudantezaninovic/"
+            />
+            <SocialLink
+              label="Facebook"
+              appUrl="fb://page/100063625745937"
+              webUrl="https://www.facebook.com/p/KUD-Ante-Zaninovic-100063625745937/"
+            />
             <NavLink
               href="https://www.hrvatskifolklor.net/php/kudovi/kudantezaninovic.php"
               target="_blank"

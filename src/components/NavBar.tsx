@@ -22,62 +22,80 @@ const NavIcons = ({ tabIndex }: NavIconsProps) => {
   return (
     // <div className={clsx("flex items-center gap-8", className)}>
     //   {session ? (
-      //   <Link
-      //     href="/members"
-      //     className="text-white"
-      //     aria-label="Account"
-      //     tabIndex={tabIndex}
-      //   >
-      //     {avatar ? (
-      //       <Image
-      //         src={avatar}
-      //         alt={name}
-      //         width={32}
-      //         height={32}
-      //         className="h-8 w-8 rounded-full ring-1 ring-white/20 object-cover"
-      //       />
-      //     ) : (
-      //       <HiUser size={24} />
-      //     )}
-      //   </Link>
-      // ) : (
-        <div className="flex items-center gap-3">
-          <Link
-            href="https://www.instagram.com/kudantezaninovic/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            tabIndex={tabIndex}
-            className="cursor-pointer p-2.5 text-white transition-colors duration-300 rounded-4xl hover:bg-white/20"
-          >
-            <Image
-              src="instagram-white-icon.svg"
-              alt="Instagram"
-              width={18}
-              height={18}
-              className="h-[18px] w-[18px]"
-              priority
-            />
-          </Link>
+    //   <Link
+    //     href="/members"
+    //     className="text-white"
+    //     aria-label="Account"
+    //     tabIndex={tabIndex}
+    //   >
+    //     {avatar ? (
+    //       <Image
+    //         src={avatar}
+    //         alt={name}
+    //         width={32}
+    //         height={32}
+    //         className="h-8 w-8 rounded-full ring-1 ring-white/20 object-cover"
+    //       />
+    //     ) : (
+    //       <HiUser size={24} />
+    //     )}
+    //   </Link>
+    // ) : (
+    <div className="flex items-center gap-3">
+      <a
+        href="instagram://user?username=kudantezaninovic"
+        onClick={(e) => {
+          e.preventDefault(); // prevent immediate navigation
+          const appUrl = "instagram://user?username=kudantezaninovic";
+          const webUrl = "https://www.instagram.com/kudantezaninovic/";
+          // try to open the app
+          window.location.href = appUrl;
+          // after a short delay, go to the web URL if app didn’t open
+          setTimeout(() => {
+            window.location.href = webUrl;
+          }, 700);
+        }}
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        tabIndex={tabIndex}
+        className="cursor-pointer p-2.5 text-white transition-colors duration-300 rounded-4xl hover:bg-white/20"
+      >
+        <Image
+          src="instagram-white-icon.svg"
+          alt="Instagram"
+          width={18}
+          height={18}
+          className="h-[18px] w-[18px]"
+          priority
+        />
+      </a>
 
-          <Link
-            href="https://www.facebook.com/p/KUD-Ante-Zaninovic-100063625745937/?locale=hr_HR"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-            tabIndex={tabIndex}
-            className="cursor-pointer p-2.5 text-white transition-colors duration-300 rounded-4xl hover:bg-white/20"
-          >
-            <Image
-              src="facebook-white-icon.svg"
-              alt="Facebook"
-              width={18}
-              height={18}
-              className="h-[18px] w-[18px]"
-              priority
-            />
-          </Link>
-        </div>
+      <a
+        href="fb://page/100063625745937"
+        onClick={(e) => {
+          e.preventDefault();
+          const appUrl = "fb://page/100063625745937";
+          const webUrl = "https://www.facebook.com/p/KUD-Ante-Zaninovic-100063625745937/";
+          window.location.href = appUrl;
+          setTimeout(() => {
+            window.location.href = webUrl;
+          }, 700);
+        }}
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+        tabIndex={tabIndex}
+        className="cursor-pointer p-2.5 text-white transition-colors duration-300 rounded-4xl hover:bg-white/20"
+      >
+        <Image
+          src="facebook-white-icon.svg"
+          alt="Facebook"
+          width={18}
+          height={18}
+          className="h-[18px] w-[18px]"
+          priority
+        />
+      </a>
+    </div>
     //   )}
     // </div>
   );
