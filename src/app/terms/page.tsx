@@ -284,6 +284,10 @@ Kaštela, Croatia
 📧kud.antezaninovic@gmail.com
 
 
+
+Na našoj web stranici ugrađeni su sadržaji s platformi trećih strana (YouTube, Spotify). Te platforme mogu koristiti kolačiće i druge tehnologije praćenja. Za više informacija pogledajte njihova pravila o privatnosti (YouTube – Google LLC, Spotify AB).
+https://www.spotify.com/hr-hr/legal/privacy-policy/
+https://policies.google.com/privacy
 </p>
             </FadeIn>
         </section>
