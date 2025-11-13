@@ -139,8 +139,8 @@ export const Footer = () => {
             >
               Lokacija
             </NavLink>
-            <NavLink href="/members" target="_blank" rel="noopener noreferrer">
-              Članovi
+            <NavLink href="/contact" target="_blank" rel="noopener noreferrer">
+              Kontakt
             </NavLink>
             <NavLink href="/terms/" target="_blank" rel="noopener noreferrer">
               Pravila privatnosti
