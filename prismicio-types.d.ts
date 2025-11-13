@@ -470,6 +470,7 @@ export type GalleryDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | HeroIstaknutoSlice
   | ButtonSlice
   | VideoSlice
   | CallToActionSlice
@@ -1543,6 +1544,108 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *HeroSpotify → Default → Primary → ExploreMore*
+ */
+export interface HeroIstaknutoSliceDefaultPrimaryExploremoreItem {
+  /**
+   * Icon field in *HeroSpotify → Default → Primary → ExploreMore*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_istaknuto.default.primary.exploremore[].icon
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * Link field in *HeroSpotify → Default → Primary → ExploreMore*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_istaknuto.default.primary.exploremore[].link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Primary content in *HeroSpotify → Default → Primary*
+ */
+export interface HeroIstaknutoSliceDefaultPrimary {
+  /**
+   * Title field in *HeroSpotify → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_istaknuto.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Body field in *HeroSpotify → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_istaknuto.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * spotify_url field in *HeroSpotify → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_istaknuto.default.primary.spotify_url
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  spotify_url: prismic.KeyTextField;
+
+  /**
+   * ExploreMore field in *HeroSpotify → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_istaknuto.default.primary.exploremore[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  exploremore: prismic.GroupField<
+    Simplify<HeroIstaknutoSliceDefaultPrimaryExploremoreItem>
+  >;
+}
+
+/**
+ * Default variation for HeroSpotify Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroIstaknutoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroIstaknutoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeroSpotify*
+ */
+type HeroIstaknutoSliceVariation = HeroIstaknutoSliceDefault;
+
+/**
+ * HeroSpotify Shared Slice
+ *
+ * - **API ID**: `hero_istaknuto`
+ * - **Description**: HeroIstaknuto
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroIstaknutoSlice = prismic.SharedSlice<
+  "hero_istaknuto",
+  HeroIstaknutoSliceVariation
+>;
+
+/**
  * Primary content in *PersonGrid → Default → Primary*
  */
 export interface PersonGridSliceDefaultPrimary {
@@ -2145,6 +2248,11 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      HeroIstaknutoSlice,
+      HeroIstaknutoSliceDefaultPrimaryExploremoreItem,
+      HeroIstaknutoSliceDefaultPrimary,
+      HeroIstaknutoSliceVariation,
+      HeroIstaknutoSliceDefault,
       PersonGridSlice,
       PersonGridSliceDefaultPrimary,
       PersonGridSliceVariation,

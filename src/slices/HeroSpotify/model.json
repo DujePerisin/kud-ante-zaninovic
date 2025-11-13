@@ -1,0 +1,70 @@
+{
+  "id": "hero_istaknuto",
+  "type": "SharedSlice",
+  "name": "HeroSpotify",
+  "description": "HeroIstaknuto",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,heading2,heading3,strong,em"
+          }
+        },
+        "spotify_url": {
+          "type": "Text",
+          "config": {
+            "label": "spotify_url",
+            "placeholder": ""
+          }
+        },
+        "exploremore": {
+          "type": "Group",
+          "config": {
+            "label": "ExploreMore",
+            "repeat": true,
+            "fields": {
+              "icon": {
+                "type": "Image",
+                "config": {
+                  "label": "Icon",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

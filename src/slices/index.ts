@@ -13,6 +13,7 @@ export const components = {
   fragrance_list: dynamic(() => import("./FragranceList")),
   gallery_hero: dynamic(() => import("./GalleryHero")),
   hero: dynamic(() => import("./Hero")),
+  hero_istaknuto: dynamic(() => import("./HeroSpotify")),
   person_grid: dynamic(() => import("./PersonGrid")),
   photo_showcase: dynamic(() => import("./PhotoShowcase")),
   product_feature: dynamic(() => import("./ProductFeature")),
