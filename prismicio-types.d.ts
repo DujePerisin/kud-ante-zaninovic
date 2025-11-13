@@ -470,6 +470,7 @@ export type GalleryDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | HeroYoutubeSlice
   | HeroIstaknutoSlice
   | ButtonSlice
   | VideoSlice
@@ -1646,6 +1647,108 @@ export type HeroIstaknutoSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *HeroYoutube → Default → Primary → youtube_url*
+ */
+export interface HeroYoutubeSliceDefaultPrimaryYoutubeUrlItem {
+  /**
+   * Image field in *HeroYoutube → Default → Primary → youtube_url*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_youtube.default.primary.youtube_url[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Link field in *HeroYoutube → Default → Primary → youtube_url*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: link
+   * - **API ID Path**: hero_youtube.default.primary.youtube_url[].link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * alt field in *HeroYoutube → Default → Primary → youtube_url*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: alternative text for accessibility
+   * - **API ID Path**: hero_youtube.default.primary.youtube_url[].alt
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  alt: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *HeroYoutube → Default → Primary*
+ */
+export interface HeroYoutubeSliceDefaultPrimary {
+  /**
+   * Title field in *HeroYoutube → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_youtube.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Body field in *HeroYoutube → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_youtube.default.primary.body
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  body: prismic.RichTextField;
+
+  /**
+   * youtube_url field in *HeroYoutube → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_youtube.default.primary.youtube_url[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  youtube_url: prismic.GroupField<
+    Simplify<HeroYoutubeSliceDefaultPrimaryYoutubeUrlItem>
+  >;
+}
+
+/**
+ * Default variation for HeroYoutube Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroYoutubeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroYoutubeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeroYoutube*
+ */
+type HeroYoutubeSliceVariation = HeroYoutubeSliceDefault;
+
+/**
+ * HeroYoutube Shared Slice
+ *
+ * - **API ID**: `hero_youtube`
+ * - **Description**: HeroYoutube
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroYoutubeSlice = prismic.SharedSlice<
+  "hero_youtube",
+  HeroYoutubeSliceVariation
+>;
+
+/**
  * Primary content in *PersonGrid → Default → Primary*
  */
 export interface PersonGridSliceDefaultPrimary {
@@ -2253,6 +2356,11 @@ declare module "@prismicio/client" {
       HeroIstaknutoSliceDefaultPrimary,
       HeroIstaknutoSliceVariation,
       HeroIstaknutoSliceDefault,
+      HeroYoutubeSlice,
+      HeroYoutubeSliceDefaultPrimaryYoutubeUrlItem,
+      HeroYoutubeSliceDefaultPrimary,
+      HeroYoutubeSliceVariation,
+      HeroYoutubeSliceDefault,
       PersonGridSlice,
       PersonGridSliceDefaultPrimary,
       PersonGridSliceVariation,

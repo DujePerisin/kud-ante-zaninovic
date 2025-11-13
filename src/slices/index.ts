@@ -14,6 +14,7 @@ export const components = {
   gallery_hero: dynamic(() => import("./GalleryHero")),
   hero: dynamic(() => import("./Hero")),
   hero_istaknuto: dynamic(() => import("./HeroSpotify")),
+  hero_youtube: dynamic(() => import("./HeroYoutube")),
   person_grid: dynamic(() => import("./PersonGrid")),
   photo_showcase: dynamic(() => import("./PhotoShowcase")),
   product_feature: dynamic(() => import("./ProductFeature")),

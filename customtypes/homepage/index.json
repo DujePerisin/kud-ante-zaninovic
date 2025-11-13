@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "hero_youtube": {
+              "type": "SharedSlice"
+            },
             "hero_istaknuto": {
               "type": "SharedSlice"
             },

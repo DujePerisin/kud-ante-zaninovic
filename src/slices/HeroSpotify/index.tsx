@@ -29,7 +29,7 @@ export default function HeroSpotify({ slice }: HeroIstaknutoProps) {
     const platforms = slice.primary.exploremore ?? []; 
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16 md:py-24">
+    <section className="mx-auto max-w-6xl px-6 py-10 md:py-16 lg:py-24">
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start">
         <div className="space-y-6">
           {title && <h2 className="font-display text-2xl sm:text-3xl md:text-4xl">{title}</h2>}
