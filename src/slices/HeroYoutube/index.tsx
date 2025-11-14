@@ -13,7 +13,7 @@ const BACK = { x: 110, y: 80, z: -60, opacity: 0.1 };
 export type HeroYoutubeProps = SliceComponentProps<Content.HeroYoutubeSlice>;
 
 const HeroYoutube: FC<HeroYoutubeProps> = ({ slice }) => {
-  const title = slice.primary.title ?? "";
+  // const title = slice.primary.title ?? "";
   const body = slice.primary.body ?? [];
 
   const items = (slice.primary.youtube_url || []).slice(0, 3);
