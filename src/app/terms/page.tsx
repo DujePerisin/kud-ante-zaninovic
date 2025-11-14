@@ -1,8 +1,21 @@
+"use client";
+
 import { FadeIn } from "@/components/FadeIn";
 import { RevealText } from "@/components/RevealText";
 import Image from "next/image";
+import { useMediaConsent } from "@/components/MediaConsent";
 
 const TermsPage = () => {
+  const { status, accept, decline } = useMediaConsent();
+
+  const statusLabel =
+    status === "granted"
+      ? "Prihvaćeni"
+      : status === "denied"
+      ? "Odbijeni"
+      : "Još nije odabrano";
+
+
     return (
         <section className="mx-auto max-w-3xl py-16 px-4 text-gray-100">
             <RevealText
@@ -289,6 +302,33 @@ Na našoj web stranici ugrađeni su sadržaji s platformi trećih strana (YouTub
 https://www.spotify.com/hr-hr/legal/privacy-policy/
 https://policies.google.com/privacy
 </p>
+<div className="mt-10 border-t border-white/10 pt-6 space-y-4">
+          <p className="text-sm text-gray-300">
+            Na ovoj stranici koristimo ugrađene sadržaje s platformi trećih
+            strana (YouTube, Spotify). Ovdje možete promijeniti svoju odluku o
+            prihvaćanju kolačića i sadržaja trećih strana.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <button
+              type="button"
+              onClick={accept}
+              className="rounded-lg bg-green-600 px-4 py-2 text-xs font-semibold text-white hover:bg-green-500 transition"
+            >
+              Prihvaćam kolačiće trećih strana
+            </button>
+            <button
+              type="button"
+              onClick={decline}
+              className="rounded-lg border border-gray-500 px-4 py-2 text-xs font-semibold text-gray-200 hover:bg-gray-800 transition"
+            >
+              Odbijam kolačiće trećih strana
+            </button>
+          </div>
+          <p className="text-xs text-gray-400">
+            Trenutni status:{" "}
+            <span className="font-semibold text-gray-200">{statusLabel}</span>
+          </p>
+        </div>
             </FadeIn>
         </section>
     );

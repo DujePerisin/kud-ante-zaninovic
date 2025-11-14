@@ -146,7 +146,7 @@ export const NavBar = ({ settings }: NavBarProps) => {
           </div>
 
           <div className="hidden md:flex" >
-            <NavIcons/>
+            <NavIcons />
           </div>
         </div>
       </div>
@@ -203,6 +203,17 @@ export const NavBar = ({ settings }: NavBarProps) => {
           >
             Članovi
           </Link> */}
+
+          {/* Temporary terms link, prije sta sve spojin na CMS */}
+          <Link
+            href="/terms"
+            onClick={() => setIsDrawerOpen(false)}
+            className="block border-b border-white/10 py-2 text-xl font-semibold uppercase tracking-wide text-white hover:text-gray-300"
+            tabIndex={isDrawerOpen ? 0 : -1}
+          >
+            Pravila
+          </Link>
+
 
           {/* Icons on mobile inside drawer */}
           <div className="pt-4 md:hidden flex justify-center">

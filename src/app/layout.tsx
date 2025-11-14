@@ -1,6 +1,71 @@
+// import type { Metadata } from "next";
+// import { Raleway } from "next/font/google";
+// import localFont from 'next/font/local'
+// import "./globals.css";
+// import { Footer } from "@/components/Footer";
+// import { NavBar } from "@/components/NavBar";
+// import { createClient } from "@/prismicio";
+// import { isFilled } from "@prismicio/client";
+// import { Providers } from "./providers";
+// import LoginToast from "@/components/LoginToast";
+
+// const raleway = Raleway({
+//   variable: "--font-raleway",
+//   subsets: ["latin"],
+//   display: "swap"
+// });
+
+// const gambarino = localFont({
+//   src: './gambarino.woff2',
+//   display: "swap",
+//   variable: "--font-gambarino",
+// })
+
+// export async function generateMetadata(): Promise<Metadata> {
+//   const client = createClient()
+//   const settings = await client.getSingle("settings")
+
+//   return {
+//     title: settings.data.site_title,
+//     description: settings.data.meta_description,
+//     openGraph: {
+//       images: isFilled.image(settings.data.fallback_og_image)
+//         ? [settings.data.fallback_og_image.url]
+//         : ["/bili-logo.jpg"]
+//     }
+//   }
+// }
+
+// export default async function RootLayout({
+//   children,
+// }: Readonly<{
+//   children: React.ReactNode;
+// }>) {
+
+//   const client = createClient()
+//   const settings = await client.getSingle("settings")
+
+
+//   return (
+//     <html
+//       lang="en"
+//       className={`${raleway.variable} ${gambarino.variable} antialiased`}
+//     >
+//       <body className="bg-neutral-900 text-white">
+//         <Providers>
+//           <NavBar settings={settings} />
+//               <LoginToast />
+//           <main className="pt-14 md:pt-16"> {children} </main>
+//           <Footer />
+//         </Providers>
+//       </body>
+//     </html>
+//   );
+// }
+
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
-import localFont from 'next/font/local'
+import localFont from "next/font/local";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { NavBar } from "@/components/NavBar";
@@ -8,22 +73,23 @@ import { createClient } from "@/prismicio";
 import { isFilled } from "@prismicio/client";
 import { Providers } from "./providers";
 import LoginToast from "@/components/LoginToast";
+import { GlobalMediaConsentModal } from "@/components/MediaConsent";
 
 const raleway = Raleway({
   variable: "--font-raleway",
   subsets: ["latin"],
-  display: "swap"
+  display: "swap",
 });
 
 const gambarino = localFont({
-  src: './gambarino.woff2',
+  src: "./gambarino.woff2",
   display: "swap",
   variable: "--font-gambarino",
-})
+});
 
 export async function generateMetadata(): Promise<Metadata> {
-  const client = createClient()
-  const settings = await client.getSingle("settings")
+  const client = createClient();
+  const settings = await client.getSingle("settings");
 
   return {
     title: settings.data.site_title,
@@ -31,9 +97,9 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       images: isFilled.image(settings.data.fallback_og_image)
         ? [settings.data.fallback_og_image.url]
-        : ["/bili-logo.jpg"]
-    }
-  }
+        : ["/bili-logo.jpg"],
+    },
+  };
 }
 
 export default async function RootLayout({
@@ -41,10 +107,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-  const client = createClient()
-  const settings = await client.getSingle("settings")
-
+  const client = createClient();
+  const settings = await client.getSingle("settings");
 
   return (
     <html
@@ -53,9 +117,11 @@ export default async function RootLayout({
     >
       <body className="bg-neutral-900 text-white">
         <Providers>
+          <GlobalMediaConsentModal />
+
           <NavBar settings={settings} />
-              <LoginToast />
-          <main className="pt-14 md:pt-16"> {children} </main>
+          <LoginToast />
+          <main className="pt-14 md:pt-16">{children}</main>
           <Footer />
         </Providers>
       </body>
